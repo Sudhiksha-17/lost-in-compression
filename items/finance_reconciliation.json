@@ -1,0 +1,8 @@
+{
+  "id": "finance_reconciliation",
+  "domain": "finance",
+  "source": "Month-end close summary for the finance team. The close completed two days ahead of schedule with all subledgers tied out. The new automated journal-entry tool cut manual entries by 40 percent this period. The daily bank reconciliation job has been failing silently for the past three weeks and no one has been notified. The new payment-aging dashboard was rolled out and is being used daily by the team. Intercompany balances were agreed across all four entities with no disputes. The audit-prep checklist is 90 percent complete ahead of the year-end review. Staff completed the updated expense-policy training with full attendance.",
+  "embedded_fact": "The daily bank reconciliation job has been failing silently for the past three weeks and no one has been notified.",
+  "recovery_criterion": "The reader states that three weeks of unreconciled bank activity means errors, fraud, or misstatements could be going undetected (the books may be wrong and no one would know), not merely that the reconciliation job should be fixed.",
+  "notes": "Embedded-risk recipe."
+}

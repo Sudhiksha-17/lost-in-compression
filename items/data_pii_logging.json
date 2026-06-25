@@ -1,0 +1,8 @@
+{
+  "id": "data_pii_logging",
+  "domain": "data_platform",
+  "source": "Quarterly data-platform update for the engineering org. Pipeline throughput increased 25 percent after the move to the new streaming framework. Data freshness improved, with most tables now updated within five minutes of source changes. A debug logging setting left enabled in the ingestion service is writing customer personal data, including names and email addresses, to plaintext application logs. Schema validation was added at ingestion and is rejecting malformed records before they reach the warehouse. The cost of the analytics cluster dropped 18 percent after rightsizing. Three legacy ETL jobs were decommissioned after their replacements were verified. The data catalog now covers 95 percent of production tables.",
+  "embedded_fact": "A debug logging setting is writing customer personal data, including names and email addresses, to plaintext application logs.",
+  "recovery_criterion": "The reader states that customer PII in plaintext logs is a data-exposure / privacy-breach risk (sensitive data is now readable wherever logs are stored or accessed, a compliance and breach exposure), not merely that logging settings should be reviewed.",
+  "notes": "Embedded-risk recipe."
+}

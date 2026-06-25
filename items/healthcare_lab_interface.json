@@ -1,0 +1,8 @@
+{
+  "id": "healthcare_lab_interface",
+  "domain": "healthcare_it",
+  "source": "Weekly systems report for the hospital IT team. Overall system uptime for the month was 99.95 percent, exceeding the service target. The patient-portal upgrade went live smoothly with positive feedback on the new appointment flow. The automated interface that posts laboratory results into the electronic health record has been down for nine days, and results are being entered into patient charts by hand in the interim. Network segmentation for the medical-device VLAN was completed as planned. The nightly database maintenance window was shortened by twenty minutes after tuning. Help-desk ticket resolution time improved to under four hours on average. The disaster-recovery failover test for the imaging system passed without issues.",
+  "embedded_fact": "The automated interface that posts laboratory results into the electronic health record has been down for nine days, and results are being entered by hand in the interim.",
+  "recovery_criterion": "The reader states that manual entry of lab results into patient charts creates a patient-safety risk through transcription error, delay, or missed results (wrong or missing lab data could affect clinical decisions), not merely that the interface should be fixed.",
+  "notes": "Embedded-risk recipe."
+}

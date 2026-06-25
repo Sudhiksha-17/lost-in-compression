@@ -1,0 +1,9 @@
+{
+  "id": "infra_capacity",
+  "domain": "infrastructure",
+  "source": "Capacity planning review, web tier. Following the efficiency initiative, production traffic was consolidated from twelve nodes onto six larger instances, improving utilization and reducing idle capacity. The new instances have handled normal and peak business-hours load comfortably since the change. The autoscaling maximum was lowered from twelve to six instances to lock in the cost savings from the consolidation. Two stale deployment configurations were removed during the cleanup. The CDN cache hit rate improved to 94 percent after tuning. Synthetic monitoring was expanded to cover three additional user journeys. The quarterly disaster-recovery drill was completed successfully.",
+  "fact_a": "Production traffic was consolidated from twelve nodes onto six larger instances, improving utilization and reducing idle capacity.",
+  "fact_b": "The autoscaling maximum was lowered from twelve to six instances to lock in the cost savings from the consolidation.",
+  "recovery_criterion": "The reader states that the web tier can no longer scale out beyond its current baseline (at its autoscaling ceiling), so a traffic surge above normal cannot be absorbed and risks overload, not merely that autoscaling settings should be reviewed.",
+  "notes": "Candidate. Run the component-isolation gate before using."
+}

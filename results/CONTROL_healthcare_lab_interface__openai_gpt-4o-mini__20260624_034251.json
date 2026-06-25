@@ -1,0 +1,74 @@
+{
+  "item_id": "healthcare_lab_interface",
+  "domain": "healthcare_it",
+  "model": "openai/gpt-4o-mini",
+  "temperature": 0.2,
+  "cap": 30,
+  "timestamp": "2026-06-24T03:42:27.044339+00:00",
+  "recovery_criterion": "The reader states that manual entry of lab results into patient charts creates a patient-safety risk through transcription error, delay, or missed results (wrong or missing lab data could affect clinical decisions), not merely that the interface should be fixed.",
+  "control": [
+    {
+      "instruction": "neutral",
+      "run_index": 0,
+      "summary": "The hospital IT team reported 99.95% system uptime, successful patient-portal upgrade, ongoing lab result entry issues, completed network segmentation, improved help-desk response, and a successful disaster-recovery test.",
+      "summary_word_count": 27,
+      "reader": "Yes, the ongoing lab result entry issues require urgent attention, as they could impact patient care and operational efficiency."
+    },
+    {
+      "instruction": "neutral",
+      "run_index": 1,
+      "summary": "The hospital IT team reported 99.95% system uptime, a successful patient-portal upgrade, ongoing manual lab result entries, completed network segmentation, improved help-desk resolution times, and a successful disaster-recovery test.",
+      "summary_word_count": 29,
+      "reader": "There is a potential risk with the ongoing manual lab result entries, as this could lead to errors or delays in patient care. This issue may require urgent attention to ensure accuracy and efficiency in lab result processing."
+    },
+    {
+      "instruction": "neutral",
+      "run_index": 2,
+      "summary": "The hospital IT team reported 99.95% system uptime, a successful patient-portal upgrade, ongoing manual lab result entries, completed network segmentation, improved help-desk resolution times, and a passed disaster-recovery test.",
+      "summary_word_count": 29,
+      "reader": "There is a potential risk with the ongoing manual lab result entries, as this could lead to errors or delays in patient care. This issue may require urgent attention to ensure accuracy and efficiency in lab result processing."
+    },
+    {
+      "instruction": "risk_aware",
+      "run_index": 0,
+      "summary": "The hospital IT team achieved 99.95% system uptime and a successful patient-portal upgrade, but attention is needed on the nine-day downtime of the automated lab results interface.",
+      "summary_word_count": 27,
+      "reader": "Yes, the nine-day downtime of the automated lab results interface poses a significant risk, as it could impact patient care and operational efficiency. This issue requires urgent attention."
+    },
+    {
+      "instruction": "risk_aware",
+      "run_index": 1,
+      "summary": "The hospital IT team's report shows high system uptime and successful upgrades, but attention is needed for the nine-day downtime of the automated lab results interface.",
+      "summary_word_count": 26,
+      "reader": "Yes, the nine-day downtime of the automated lab results interface poses a significant risk to patient care and operational efficiency, requiring urgent attention to resolve the issue."
+    },
+    {
+      "instruction": "risk_aware",
+      "run_index": 2,
+      "summary": "The hospital IT team's report highlights 99.95% system uptime and successful upgrades, but attention is needed on the nine-day downtime of the automated lab results interface.",
+      "summary_word_count": 26,
+      "reader": "Yes, the nine-day downtime of the automated lab results interface is a significant issue that requires urgent attention, as it could impact patient care and operational efficiency."
+    },
+    {
+      "instruction": "preserve_all",
+      "run_index": 0,
+      "summary": "The hospital IT team's report shows 99.95% uptime, successful patient-portal upgrade, nine-day lab results interface outage, completed VLAN segmentation, reduced database maintenance time, improved help-desk resolution, and successful disaster-recovery test.",
+      "summary_word_count": 30,
+      "reader": "The nine-day lab results interface outage is a significant issue that requires urgent attention, as it could impact patient care and timely access to critical lab results."
+    },
+    {
+      "instruction": "preserve_all",
+      "run_index": 1,
+      "summary": "The hospital IT team's report shows 99.95% uptime, successful patient-portal upgrade, nine-day lab results interface outage, completed VLAN segmentation, reduced database maintenance, improved help-desk resolution under four hours, and successful disaster-recovery test.",
+      "summary_word_count": 32,
+      "reader": "The nine-day lab results interface outage is a significant issue that requires urgent attention, as it may impact patient care and timely access to critical lab results."
+    },
+    {
+      "instruction": "preserve_all",
+      "run_index": 2,
+      "summary": "The hospital IT team's report shows 99.95% uptime, successful patient-portal upgrade, nine-day lab results interface outage, completed network segmentation, improved help-desk resolution under four hours, and successful disaster-recovery test.",
+      "summary_word_count": 29,
+      "reader": "The nine-day lab results interface outage is a significant issue that requires urgent attention, as it could impact patient care and timely access to critical lab information."
+    }
+  ]
+}

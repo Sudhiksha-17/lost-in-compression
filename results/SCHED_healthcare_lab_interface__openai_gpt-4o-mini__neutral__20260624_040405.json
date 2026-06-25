@@ -1,0 +1,137 @@
+{
+  "item_id": "healthcare_lab_interface",
+  "domain": "healthcare_it",
+  "model": "openai/gpt-4o-mini",
+  "mode": "neutral",
+  "caps": [
+    70,
+    45,
+    30,
+    20
+  ],
+  "temperature": 0.2,
+  "timestamp": "2026-06-24T04:03:27.778520+00:00",
+  "recovery_criterion": "The reader states that manual entry of lab results into patient charts creates a patient-safety risk through transcription error, delay, or missed results (wrong or missing lab data could affect clinical decisions), not merely that the interface should be fixed.",
+  "runs": [
+    {
+      "run_index": 0,
+      "stages": [
+        {
+          "hop": 0,
+          "cap": null,
+          "text": "Weekly systems report for the hospital IT team. Overall system uptime for the month was 99.95 percent, exceeding the service target. The patient-portal upgrade went live smoothly with positive feedback on the new appointment flow. The automated interface that posts laboratory results into the electronic health record has been down for nine days, and results are being entered into patient charts by hand in the interim. Network segmentation for the medical-device VLAN was completed as planned. The nightly database maintenance window was shortened by twenty minutes after tuning. Help-desk ticket resolution time improved to under four hours on average. The disaster-recovery failover test for the imaging system passed without issues.",
+          "word_count": 110,
+          "reader": "Yes, there is a significant issue that requires urgent attention: the automated interface for posting laboratory results into the electronic health record has been down for nine days, necessitating manual entry of results into patient charts. This poses a risk of errors and inefficiencies in patient care."
+        },
+        {
+          "hop": 1,
+          "cap": 70,
+          "text": "The hospital IT team's weekly report highlights a 99.95% system uptime, surpassing targets. The patient-portal upgrade was successful, receiving positive feedback. However, an automated lab results interface has been down for nine days, requiring manual entry. Network segmentation for the medical-device VLAN was completed, and nightly database maintenance was shortened by twenty minutes. Help-desk ticket resolution improved to under four hours, and the disaster-recovery test for the imaging system passed successfully.",
+          "word_count": 71,
+          "reader": "Yes, the automated lab results interface being down for nine days and requiring manual entry is a significant issue that requires urgent attention, as it can impact patient care and workflow efficiency."
+        },
+        {
+          "hop": 2,
+          "cap": 45,
+          "text": "The hospital IT team achieved 99.95% system uptime, upgraded the patient portal successfully, and completed network segmentation. However, an automated lab results interface was down for nine days. Help-desk resolution improved to under four hours, and the imaging system's disaster-recovery test passed.",
+          "word_count": 42,
+          "reader": "Yes, the nine-day downtime of the automated lab results interface is a significant issue that requires urgent attention, as it could impact patient care and operational efficiency."
+        },
+        {
+          "hop": 3,
+          "cap": 30,
+          "text": "The IT team achieved 99.95% uptime, upgraded the patient portal, completed network segmentation, improved help-desk resolution to under four hours, but faced a nine-day lab interface outage.",
+          "word_count": 27,
+          "reader": "Yes, the nine-day lab interface outage is a significant issue that requires urgent attention, as it could impact patient care and operational efficiency."
+        },
+        {
+          "hop": 4,
+          "cap": 20,
+          "text": "The IT team achieved 99.95% uptime, upgraded the portal, improved help-desk resolution, but had a nine-day lab outage.",
+          "word_count": 18,
+          "reader": "Yes, the nine-day lab outage is a significant issue that requires urgent attention, as it could impact operations and user satisfaction despite the overall high uptime and improvements in other areas."
+        }
+      ]
+    },
+    {
+      "run_index": 1,
+      "stages": [
+        {
+          "hop": 0,
+          "cap": null,
+          "text": "Weekly systems report for the hospital IT team. Overall system uptime for the month was 99.95 percent, exceeding the service target. The patient-portal upgrade went live smoothly with positive feedback on the new appointment flow. The automated interface that posts laboratory results into the electronic health record has been down for nine days, and results are being entered into patient charts by hand in the interim. Network segmentation for the medical-device VLAN was completed as planned. The nightly database maintenance window was shortened by twenty minutes after tuning. Help-desk ticket resolution time improved to under four hours on average. The disaster-recovery failover test for the imaging system passed without issues.",
+          "word_count": 110,
+          "reader": "Yes, there is a significant issue that requires urgent attention: the automated interface for posting laboratory results into the electronic health record has been down for nine days, necessitating manual entry of results. This could lead to errors and delays in patient care. Immediate action is needed to restore the automated system."
+        },
+        {
+          "hop": 1,
+          "cap": 70,
+          "text": "The hospital IT team's weekly report highlights a 99.95% system uptime, surpassing targets. The patient-portal upgrade was successful, receiving positive feedback. However, an automated lab results interface has been down for nine days, requiring manual entry. Network segmentation for the medical-device VLAN was completed, and nightly database maintenance was shortened by twenty minutes. Help-desk ticket resolution improved to under four hours, and the disaster-recovery test for the imaging system passed successfully.",
+          "word_count": 71,
+          "reader": "Yes, the automated lab results interface being down for nine days is a significant issue that requires urgent attention, as it necessitates manual entry and could impact patient care and operational efficiency."
+        },
+        {
+          "hop": 2,
+          "cap": 45,
+          "text": "The hospital IT team reported 99.95% system uptime, successful patient-portal upgrades, and completed network segmentation. However, an automated lab results interface was down for nine days. Help-desk resolution improved to under four hours, and a disaster-recovery test for the imaging system passed.",
+          "word_count": 42,
+          "reader": "Yes, the nine-day downtime of the automated lab results interface is a significant issue that requires urgent attention, as it could impact patient care and operational efficiency."
+        },
+        {
+          "hop": 3,
+          "cap": 30,
+          "text": "The IT team achieved 99.95% uptime, upgraded the patient portal, completed network segmentation, improved help-desk resolution to under four hours, but faced a nine-day lab interface outage.",
+          "word_count": 27,
+          "reader": "Yes, the nine-day lab interface outage is a significant issue that requires urgent attention, as it could impact patient care and operational efficiency."
+        },
+        {
+          "hop": 4,
+          "cap": 20,
+          "text": "The IT team achieved 99.95% uptime, upgraded the portal, improved help-desk resolution, but had a nine-day lab outage.",
+          "word_count": 18,
+          "reader": "Yes, the nine-day lab outage is a significant issue that requires urgent attention, as it indicates a major disruption that could impact operations and productivity."
+        }
+      ]
+    },
+    {
+      "run_index": 2,
+      "stages": [
+        {
+          "hop": 0,
+          "cap": null,
+          "text": "Weekly systems report for the hospital IT team. Overall system uptime for the month was 99.95 percent, exceeding the service target. The patient-portal upgrade went live smoothly with positive feedback on the new appointment flow. The automated interface that posts laboratory results into the electronic health record has been down for nine days, and results are being entered into patient charts by hand in the interim. Network segmentation for the medical-device VLAN was completed as planned. The nightly database maintenance window was shortened by twenty minutes after tuning. Help-desk ticket resolution time improved to under four hours on average. The disaster-recovery failover test for the imaging system passed without issues.",
+          "word_count": 110,
+          "reader": "Yes, there is a significant issue that requires urgent attention: the automated interface for posting laboratory results into the electronic health record has been down for nine days, necessitating manual entry of results. This poses a risk of errors and inefficiencies in patient care."
+        },
+        {
+          "hop": 1,
+          "cap": 70,
+          "text": "The hospital IT team's weekly report highlights a 99.95% system uptime, surpassing targets. The patient-portal upgrade was successful, receiving positive feedback. However, an automated lab results interface has been down for nine days, requiring manual entry. Network segmentation for the medical-device VLAN was completed, and nightly database maintenance was shortened by 20 minutes. Help-desk ticket resolution improved to under four hours, and the disaster-recovery test for the imaging system passed successfully.",
+          "word_count": 71,
+          "reader": "Yes, the automated lab results interface being down for nine days and requiring manual entry is a significant issue that requires urgent attention, as it can impact patient care and operational efficiency."
+        },
+        {
+          "hop": 2,
+          "cap": 45,
+          "text": "The hospital IT team reported 99.95% system uptime, successful patient-portal upgrades, and completed network segmentation. However, an automated lab results interface was down for nine days. Help-desk resolution improved to under four hours, and a disaster-recovery test passed successfully.",
+          "word_count": 39,
+          "reader": "Yes, the nine-day downtime of the automated lab results interface is a significant issue that requires urgent attention, as it could impact patient care and operational efficiency."
+        },
+        {
+          "hop": 3,
+          "cap": 30,
+          "text": "The IT team achieved 99.95% uptime, upgraded the patient portal, completed network segmentation, improved help-desk resolution to under four hours, but faced a nine-day lab results interface outage.",
+          "word_count": 28,
+          "reader": "Yes, the nine-day lab results interface outage is a significant issue that requires urgent attention, as it could impact patient care and trust in the system."
+        },
+        {
+          "hop": 4,
+          "cap": 20,
+          "text": "The IT team achieved 99.95% uptime, upgraded the portal, improved help-desk resolution, but had a nine-day lab outage.",
+          "word_count": 18,
+          "reader": "Yes, the nine-day lab outage is a significant issue that requires urgent attention, as it indicates a major disruption in service that could impact operations and user satisfaction."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "item_id": "infra_migration",
+  "domain": "infrastructure",
+  "model": "anthropic/claude-haiku-4.5",
+  "mode": "neutral",
+  "caps": [
+    70,
+    45,
+    30,
+    20
+  ],
+  "temperature": 0.2,
+  "timestamp": "2026-06-24T04:28:31.233448+00:00",
+  "recovery_criterion": "The reader states that current/live customer data is unprotected or at risk of loss because backups are targeting the old instance rather than the new one (a backup/recoverability gap created by the migration), not merely that backups should be checked.",
+  "runs": [
+    {
+      "run_index": 0,
+      "stages": [
+        {
+          "hop": 0,
+          "cap": null,
+          "text": "Weekly infrastructure review for the platform team. The primary customer database was migrated to a new high-availability instance over the weekend, completing the planned hardware refresh ahead of schedule. Query latency on the new instance has improved by roughly 30 percent and connection stability has been stable since cutover. The automated nightly backup job still points at the old database instance. Two new read replicas were provisioned to support the analytics workload. The staging environment was refreshed to mirror the new production topology. Dashboard panels were updated to reflect the new instance names. The on-call rotation was handed over to the incoming engineer for the next cycle. A minor logging verbosity issue was identified and downgraded to a follow-up ticket. Documentation for the new topology was drafted and is pending review.",
+          "word_count": 131,
+          "reader": "**Yes, one urgent issue:**\n\nThe automated nightly backup job still points to the old database instance. This needs immediate correction to ensure the new production database is being backed up. If not fixed before the next backup cycle, you risk having no current backups of your primary database.\n\n**Recommended action:** Redirect the backup job to the new instance immediately."
+        },
+        {
+          "hop": 1,
+          "cap": 70,
+          "text": "The platform team successfully migrated the primary customer database to a new high-availability instance ahead of schedule, achieving 30% improved query latency and stable connections. Two read replicas were provisioned for analytics. However, the automated backup job still targets the old instance and requires fixing. Staging was updated to match production. Documentation is pending review.",
+          "word_count": 55,
+          "reader": "**Yes, one urgent issue:**\n\nThe automated backup job still targeting the old instance is a critical risk. If the old instance is decommissioned or fails, you'll lose backup coverage on your primary database. This should be fixed immediately before the old instance is taken offline.\n\nThe pending documentation is lower priority but should be completed soon to prevent operational confusion."
+        },
+        {
+          "hop": 2,
+          "cap": 45,
+          "text": "Platform team completed early database migration to high-availability instance, achieving 30% improved query latency and stable connections. Two read replicas provisioned for analytics. Staging now matches production. Pending: fix automated backups targeting old instance and complete documentation review.",
+          "word_count": 38,
+          "reader": "**Low urgency, but one item needs prompt attention:**\n\nThe automated backups still targeting the old instance is a **potential data loss risk** if the old instance is decommissioned or fails. This should be corrected soon, though it's not immediately critical if the old instance remains operational.\n\nThe documentation review is routine maintenance.\n\n**Recommendation:** Prioritize fixing the backup configuration within the next 1-2 days before decommissioning any old infrastructure."
+        },
+        {
+          "hop": 3,
+          "cap": 30,
+          "text": "Platform team migrated database to high-availability instance, improving query latency 30% with stable connections and read replicas. Pending: fix automated backups and complete documentation.",
+          "word_count": 24,
+          "reader": "**Low urgency, but one item needs attention:**\n\nThe **automated backups** should be prioritized. Without functioning backups on a production database, you lack disaster recovery capability\u2014this is a significant risk if not addressed soon.\n\nDocumentation can wait, but backups should be fixed promptly."
+        },
+        {
+          "hop": 4,
+          "cap": 20,
+          "text": "Platform team migrated database to high-availability instance, improving query latency 30%. Pending: automated backups and documentation.",
+          "word_count": 16,
+          "reader": "**Low urgency, but one notable gap:**\n\nThe lack of **automated backups** on a production database is a significant risk that should be addressed soon\u2014not necessarily today, but within days. A high-availability instance doesn't protect against data corruption or accidental deletion.\n\nDocumentation can wait longer, but backups should be prioritized."
+        }
+      ]
+    },
+    {
+      "run_index": 1,
+      "stages": [
+        {
+          "hop": 0,
+          "cap": null,
+          "text": "Weekly infrastructure review for the platform team. The primary customer database was migrated to a new high-availability instance over the weekend, completing the planned hardware refresh ahead of schedule. Query latency on the new instance has improved by roughly 30 percent and connection stability has been stable since cutover. The automated nightly backup job still points at the old database instance. Two new read replicas were provisioned to support the analytics workload. The staging environment was refreshed to mirror the new production topology. Dashboard panels were updated to reflect the new instance names. The on-call rotation was handed over to the incoming engineer for the next cycle. A minor logging verbosity issue was identified and downgraded to a follow-up ticket. Documentation for the new topology was drafted and is pending review.",
+          "word_count": 131,
+          "reader": "**Yes, one urgent issue:**\n\nThe automated nightly backup job still points to the old database instance. This needs immediate correction to ensure backups are protecting the new production database. If the old instance is decommissioned or fails, you'll lose backup coverage.\n\n**Recommended action:** Redirect the backup job to the new instance immediately, then verify the next backup completes successfully."
+        },
+        {
+          "hop": 1,
+          "cap": 70,
+          "text": "The platform team successfully migrated the primary customer database to a high-availability instance ahead of schedule, achieving 30% improved query latency and stable connections. Two read replicas were provisioned for analytics. However, the automated backup job still targets the old instance and requires fixing. Staging was updated to match production. Documentation is pending review.",
+          "word_count": 54,
+          "reader": "**Yes, one urgent issue:**\n\nThe automated backup job still targets the old instance. This is a critical risk\u2014if the old instance is decommissioned or fails, you'll lose backup coverage on your primary database. This should be fixed immediately before the old instance is taken offline.\n\nThe pending documentation is lower priority but should be completed soon to prevent operational confusion."
+        },
+        {
+          "hop": 2,
+          "cap": 45,
+          "text": "Platform team completed early database migration to high-availability instance, achieving 30% improved query latency and stable connections. Two read replicas provisioned for analytics. Staging now matches production. Pending: fix automated backups targeting old instance and complete documentation review.",
+          "word_count": 38,
+          "reader": "**Low urgency, but one item needs prompt attention:**\n\nThe automated backups still targeting the old instance is a **data protection gap** that should be fixed soon\u2014if the old instance is decommissioned, you'll lose backup continuity. This isn't immediately critical if the old instance remains running, but it should be prioritized before any cleanup.\n\nThe documentation review is routine and can follow."
+        },
+        {
+          "hop": 3,
+          "cap": 30,
+          "text": "Platform team migrated database to high-availability instance, improving query latency 30% with stable connections and read replicas. Pending: fix automated backups and complete documentation.",
+          "word_count": 24,
+          "reader": "**Low urgency, but one item needs attention:**\n\nThe **automated backups** should be prioritized. Without functioning backups on a production database, you're exposed to data loss risk. This should be completed soon, though it's not an immediate crisis if backups were working before the migration.\n\nDocumentation can wait longer."
+        },
+        {
+          "hop": 4,
+          "cap": 20,
+          "text": "Platform team migrated database to high-availability instance, improving query latency 30%. Pending: automated backups and documentation.",
+          "word_count": 16,
+          "reader": "**Low urgency, but one notable gap:**\n\nThe lack of **automated backups** on a production database is a significant risk that should be addressed soon\u2014not necessarily today, but within days. A high-availability instance doesn't protect against data corruption or accidental deletion.\n\n**Recommendation:** Prioritize setting up automated backups before considering this migration complete. Documentation can follow."
+        }
+      ]
+    },
+    {
+      "run_index": 2,
+      "stages": [
+        {
+          "hop": 0,
+          "cap": null,
+          "text": "Weekly infrastructure review for the platform team. The primary customer database was migrated to a new high-availability instance over the weekend, completing the planned hardware refresh ahead of schedule. Query latency on the new instance has improved by roughly 30 percent and connection stability has been stable since cutover. The automated nightly backup job still points at the old database instance. Two new read replicas were provisioned to support the analytics workload. The staging environment was refreshed to mirror the new production topology. Dashboard panels were updated to reflect the new instance names. The on-call rotation was handed over to the incoming engineer for the next cycle. A minor logging verbosity issue was identified and downgraded to a follow-up ticket. Documentation for the new topology was drafted and is pending review.",
+          "word_count": 131,
+          "reader": "**Yes, one urgent issue:**\n\nThe automated nightly backup job still points to the old database instance. This needs immediate correction to ensure backups are protecting the new production database. If the old instance is decommissioned or fails, you'll have no recent backups of your current data.\n\n**Recommended action:** Redirect the backup job to the new instance immediately, then verify the next backup completes successfully."
+        },
+        {
+          "hop": 1,
+          "cap": 70,
+          "text": "The platform team successfully migrated the primary customer database to a new high-availability instance ahead of schedule, achieving 30% improved query latency and stable connections. Two read replicas were provisioned for analytics. However, the automated backup job still targets the old instance and requires fixing. Staging was updated to match production. Documentation is pending review.",
+          "word_count": 55,
+          "reader": "**Yes, one urgent issue:**\n\nThe automated backup job still targeting the old instance is a critical risk. If the old instance is decommissioned or fails, you'll lose backup coverage on your primary database. This should be fixed immediately before proceeding with any cleanup of the legacy infrastructure.\n\nThe pending documentation is lower priority but should be completed soon to prevent operational confusion."
+        },
+        {
+          "hop": 2,
+          "cap": 45,
+          "text": "Platform team completed early database migration to high-availability instance, achieving 30% improved query latency and stable connections. Two read replicas provisioned for analytics. Staging updated to match production. Pending: fix automated backups targeting old instance and complete documentation review.",
+          "word_count": 39,
+          "reader": "**Yes, one urgent issue:**\n\nThe automated backups are still targeting the old instance. This is a critical gap\u2014if the old instance fails or is decommissioned, you'll lose backup coverage on your production database. \n\n**Action needed:** Immediately redirect backups to the new high-availability instance before decommissioning the old one.\n\nThe documentation review can wait, but backup configuration cannot."
+        },
+        {
+          "hop": 3,
+          "cap": 30,
+          "text": "Platform team migrated database to high-availability instance, improving query latency 30% with stable connections and read replicas. Pending: fix automated backups and complete documentation.",
+          "word_count": 24,
+          "reader": "**Low urgency, but one item needs attention:**\n\nThe **automated backups** issue should be addressed soon. While not immediately critical if backups were working before the migration, running without automated backups creates data loss risk and should be completed within days, not weeks.\n\nDocumentation can wait longer."
+        },
+        {
+          "hop": 4,
+          "cap": 20,
+          "text": "Platform team migrated database to high-availability instance, improving query latency 30%. Pending: fix backups and complete documentation.",
+          "word_count": 17,
+          "reader": "**Yes, one urgent issue:**\n\n**Backups are not yet fixed.** Until backup functionality is verified and working on the new HA instance, there's significant data loss risk. This should be prioritized immediately before any further changes.\n\nThe documentation can wait, but backups cannot."
+        }
+      ]
+    }
+  ]
+}

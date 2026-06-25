@@ -1,0 +1,134 @@
+{
+  "item_id": "infra_capacity",
+  "domain": "infrastructure",
+  "model": "openai/gpt-4o-mini",
+  "temperature": 0.2,
+  "wordcap": 25,
+  "timestamp": "2026-06-24T02:33:47.363780+00:00",
+  "recovery_criterion": "The reader states that the web tier can no longer scale out beyond its current baseline (at its autoscaling ceiling), so a traffic surge above normal cannot be absorbed and risks overload, not merely that autoscaling settings should be reviewed.",
+  "runs": [
+    {
+      "run_index": 0,
+      "steps": {
+        "gate_fact_a": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nProduction traffic was consolidated from twelve nodes onto six larger instances, improving utilization and reducing idle capacity.",
+          "response": "The consolidation of production traffic onto fewer instances could pose a risk if any of the six larger instances experience failure or performance issues, as it may lead to increased downtime or degraded service. Urgent attention may be needed to ensure redundancy and monitor the performance of these instances closely."
+        },
+        "gate_fact_b": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nThe autoscaling maximum was lowered from twelve to six instances to lock in the cost savings from the consolidation.",
+          "response": "Yes, lowering the autoscaling maximum from twelve to six instances could pose a risk of insufficient capacity during peak demand, potentially leading to performance issues or downtime. This change requires monitoring to ensure that the system can handle traffic effectively."
+        },
+        "single_hop_summary": {
+          "prompt": "Summarize the following in one sentence of no more than 25 words.\n\nCapacity planning review, web tier. Following the efficiency initiative, production traffic was consolidated from twelve nodes onto six larger instances, improving utilization and reducing idle capacity. The new instances have handled normal and peak business-hours load comfortably since the change. The autoscaling maximum was lowered from twelve to six instances to lock in the cost savings from the consolidation. Two stale deployment configurations were removed during the cleanup. The CDN cache hit rate improved to 94 percent after tuning. Synthetic monitoring was expanded to cover three additional user journeys. The quarterly disaster-recovery drill was completed successfully.",
+          "response": "Production traffic was consolidated onto six larger instances, enhancing efficiency, reducing costs, and improving CDN cache hit rates, while also expanding monitoring and completing a disaster-recovery drill.",
+          "word_count": 27
+        },
+        "single_hop_reader": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nProduction traffic was consolidated onto six larger instances, enhancing efficiency, reducing costs, and improving CDN cache hit rates, while also expanding monitoring and completing a disaster-recovery drill.",
+          "response": "There are no immediate risks or issues mentioned in the summary that require urgent attention. The consolidation appears to have improved efficiency and monitoring, and the completion of a disaster-recovery drill indicates preparedness."
+        },
+        "multi_hop_1": {
+          "prompt": "Summarize the following report in four sentences.\n\nCapacity planning review, web tier. Following the efficiency initiative, production traffic was consolidated from twelve nodes onto six larger instances, improving utilization and reducing idle capacity. The new instances have handled normal and peak business-hours load comfortably since the change. The autoscaling maximum was lowered from twelve to six instances to lock in the cost savings from the consolidation. Two stale deployment configurations were removed during the cleanup. The CDN cache hit rate improved to 94 percent after tuning. Synthetic monitoring was expanded to cover three additional user journeys. The quarterly disaster-recovery drill was completed successfully.",
+          "response": "The capacity planning review for the web tier indicates that production traffic was successfully consolidated from twelve nodes to six larger instances, enhancing utilization and minimizing idle capacity. The new instances have effectively managed both normal and peak loads since the consolidation, leading to a reduction in the autoscaling maximum from twelve to six instances to secure cost savings. Additionally, two outdated deployment configurations were eliminated, and the CDN cache hit rate improved to 94 percent following optimizations. The review also noted the successful completion of a quarterly disaster-recovery drill and the expansion of synthetic monitoring to include three more user journeys.",
+          "word_count": 102
+        },
+        "multi_hop_2": {
+          "prompt": "Summarize the following report in two sentences.\n\nThe capacity planning review for the web tier indicates that production traffic was successfully consolidated from twelve nodes to six larger instances, enhancing utilization and minimizing idle capacity. The new instances have effectively managed both normal and peak loads since the consolidation, leading to a reduction in the autoscaling maximum from twelve to six instances to secure cost savings. Additionally, two outdated deployment configurations were eliminated, and the CDN cache hit rate improved to 94 percent following optimizations. The review also noted the successful completion of a quarterly disaster-recovery drill and the expansion of synthetic monitoring to include three more user journeys.",
+          "response": "The web tier capacity planning review highlights a successful consolidation of production traffic from twelve nodes to six larger instances, improving utilization and reducing costs while maintaining performance during peak loads. Additionally, the review noted the elimination of outdated deployment configurations, an improved CDN cache hit rate of 94 percent, the completion of a quarterly disaster-recovery drill, and the expansion of synthetic monitoring to cover three more user journeys.",
+          "word_count": 69
+        },
+        "multi_hop_3": {
+          "prompt": "Summarize the following in one sentence of no more than 25 words.\n\nThe web tier capacity planning review highlights a successful consolidation of production traffic from twelve nodes to six larger instances, improving utilization and reducing costs while maintaining performance during peak loads. Additionally, the review noted the elimination of outdated deployment configurations, an improved CDN cache hit rate of 94 percent, the completion of a quarterly disaster-recovery drill, and the expansion of synthetic monitoring to cover three more user journeys.",
+          "response": "The review reports successful traffic consolidation to six nodes, cost reduction, improved CDN performance, updated configurations, disaster recovery completion, and expanded monitoring for user journeys.",
+          "word_count": 25
+        },
+        "multi_hop_reader": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nThe review reports successful traffic consolidation to six nodes, cost reduction, improved CDN performance, updated configurations, disaster recovery completion, and expanded monitoring for user journeys.",
+          "response": "There are no immediate risks or issues requiring urgent attention based on the summary provided. All aspects appear to be successfully addressed."
+        }
+      }
+    },
+    {
+      "run_index": 1,
+      "steps": {
+        "gate_fact_a": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nProduction traffic was consolidated from twelve nodes onto six larger instances, improving utilization and reducing idle capacity.",
+          "response": "There doesn't appear to be an immediate risk or issue requiring urgent attention based on the summary provided. However, it's important to monitor the performance and stability of the six larger instances to ensure they can handle the increased load without issues."
+        },
+        "gate_fact_b": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nThe autoscaling maximum was lowered from twelve to six instances to lock in the cost savings from the consolidation.",
+          "response": "Yes, lowering the autoscaling maximum from twelve to six instances could pose a risk of insufficient capacity during peak demand periods, potentially leading to performance issues or downtime. This change requires monitoring to ensure that the system can handle traffic effectively."
+        },
+        "single_hop_summary": {
+          "prompt": "Summarize the following in one sentence of no more than 25 words.\n\nCapacity planning review, web tier. Following the efficiency initiative, production traffic was consolidated from twelve nodes onto six larger instances, improving utilization and reducing idle capacity. The new instances have handled normal and peak business-hours load comfortably since the change. The autoscaling maximum was lowered from twelve to six instances to lock in the cost savings from the consolidation. Two stale deployment configurations were removed during the cleanup. The CDN cache hit rate improved to 94 percent after tuning. Synthetic monitoring was expanded to cover three additional user journeys. The quarterly disaster-recovery drill was completed successfully.",
+          "response": "Production traffic was consolidated onto six larger instances, enhancing efficiency, reducing idle capacity, and achieving a 94% CDN cache hit rate while maintaining performance.",
+          "word_count": 24
+        },
+        "single_hop_reader": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nProduction traffic was consolidated onto six larger instances, enhancing efficiency, reducing idle capacity, and achieving a 94% CDN cache hit rate while maintaining performance.",
+          "response": "There are no immediate risks or issues requiring urgent attention based on the provided summary. The consolidation appears to have improved efficiency and performance metrics. However, ongoing monitoring is advisable to ensure stability and address any potential future issues."
+        },
+        "multi_hop_1": {
+          "prompt": "Summarize the following report in four sentences.\n\nCapacity planning review, web tier. Following the efficiency initiative, production traffic was consolidated from twelve nodes onto six larger instances, improving utilization and reducing idle capacity. The new instances have handled normal and peak business-hours load comfortably since the change. The autoscaling maximum was lowered from twelve to six instances to lock in the cost savings from the consolidation. Two stale deployment configurations were removed during the cleanup. The CDN cache hit rate improved to 94 percent after tuning. Synthetic monitoring was expanded to cover three additional user journeys. The quarterly disaster-recovery drill was completed successfully.",
+          "response": "The capacity planning review for the web tier indicates that production traffic was successfully consolidated from twelve nodes to six larger instances, enhancing utilization and minimizing idle capacity. The new instances have effectively managed both normal and peak loads, leading to a reduction in the autoscaling maximum from twelve to six instances to secure cost savings. Additionally, two outdated deployment configurations were eliminated, and the CDN cache hit rate improved to 94 percent following optimizations. The review also noted the successful completion of the quarterly disaster-recovery drill and the expansion of synthetic monitoring to include three more user journeys.",
+          "word_count": 99
+        },
+        "multi_hop_2": {
+          "prompt": "Summarize the following report in two sentences.\n\nThe capacity planning review for the web tier indicates that production traffic was successfully consolidated from twelve nodes to six larger instances, enhancing utilization and minimizing idle capacity. The new instances have effectively managed both normal and peak loads, leading to a reduction in the autoscaling maximum from twelve to six instances to secure cost savings. Additionally, two outdated deployment configurations were eliminated, and the CDN cache hit rate improved to 94 percent following optimizations. The review also noted the successful completion of the quarterly disaster-recovery drill and the expansion of synthetic monitoring to include three more user journeys.",
+          "response": "The web tier capacity planning review successfully consolidated production traffic from twelve nodes to six larger instances, improving utilization and reducing costs by lowering the autoscaling maximum. Additionally, outdated deployment configurations were removed, the CDN cache hit rate rose to 94 percent, and the quarterly disaster-recovery drill was completed alongside the expansion of synthetic monitoring to cover three more user journeys.",
+          "word_count": 61
+        },
+        "multi_hop_3": {
+          "prompt": "Summarize the following in one sentence of no more than 25 words.\n\nThe web tier capacity planning review successfully consolidated production traffic from twelve nodes to six larger instances, improving utilization and reducing costs by lowering the autoscaling maximum. Additionally, outdated deployment configurations were removed, the CDN cache hit rate rose to 94 percent, and the quarterly disaster-recovery drill was completed alongside the expansion of synthetic monitoring to cover three more user journeys.",
+          "response": "The review consolidated traffic to six nodes, improved CDN cache hit rate to 94%, updated configurations, and expanded monitoring while completing a disaster-recovery drill.",
+          "word_count": 24
+        },
+        "multi_hop_reader": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nThe review consolidated traffic to six nodes, improved CDN cache hit rate to 94%, updated configurations, and expanded monitoring while completing a disaster-recovery drill.",
+          "response": "There doesn't appear to be any immediate risks or issues requiring urgent attention in the summary provided. The improvements and updates suggest a proactive approach to managing the system. However, ongoing monitoring is essential to ensure stability and performance."
+        }
+      }
+    },
+    {
+      "run_index": 2,
+      "steps": {
+        "gate_fact_a": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nProduction traffic was consolidated from twelve nodes onto six larger instances, improving utilization and reducing idle capacity.",
+          "response": "The consolidation of production traffic onto fewer nodes could pose a risk if any of the six larger instances experience downtime or performance issues, as it may lead to increased impact on overall service availability. Monitoring and contingency plans should be in place to address potential failures urgently."
+        },
+        "gate_fact_b": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nThe autoscaling maximum was lowered from twelve to six instances to lock in the cost savings from the consolidation.",
+          "response": "Yes, lowering the autoscaling maximum from twelve to six instances could pose a risk of insufficient capacity to handle peak loads, potentially leading to performance issues or downtime. This change requires monitoring to ensure that the system can still meet demand."
+        },
+        "single_hop_summary": {
+          "prompt": "Summarize the following in one sentence of no more than 25 words.\n\nCapacity planning review, web tier. Following the efficiency initiative, production traffic was consolidated from twelve nodes onto six larger instances, improving utilization and reducing idle capacity. The new instances have handled normal and peak business-hours load comfortably since the change. The autoscaling maximum was lowered from twelve to six instances to lock in the cost savings from the consolidation. Two stale deployment configurations were removed during the cleanup. The CDN cache hit rate improved to 94 percent after tuning. Synthetic monitoring was expanded to cover three additional user journeys. The quarterly disaster-recovery drill was completed successfully.",
+          "response": "Production traffic was consolidated onto six larger instances, enhancing efficiency, reducing costs, improving CDN cache hit rate to 94%, and successfully completing a disaster-recovery drill.",
+          "word_count": 25
+        },
+        "single_hop_reader": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nProduction traffic was consolidated onto six larger instances, enhancing efficiency, reducing costs, improving CDN cache hit rate to 94%, and successfully completing a disaster-recovery drill.",
+          "response": "There are no immediate risks or issues that require urgent attention based on the provided summary. The consolidation of production traffic and successful disaster-recovery drill indicate positive outcomes. However, ongoing monitoring of the larger instances and CDN performance is advisable to ensure continued stability and efficiency."
+        },
+        "multi_hop_1": {
+          "prompt": "Summarize the following report in four sentences.\n\nCapacity planning review, web tier. Following the efficiency initiative, production traffic was consolidated from twelve nodes onto six larger instances, improving utilization and reducing idle capacity. The new instances have handled normal and peak business-hours load comfortably since the change. The autoscaling maximum was lowered from twelve to six instances to lock in the cost savings from the consolidation. Two stale deployment configurations were removed during the cleanup. The CDN cache hit rate improved to 94 percent after tuning. Synthetic monitoring was expanded to cover three additional user journeys. The quarterly disaster-recovery drill was completed successfully.",
+          "response": "The capacity planning review for the web tier indicates that production traffic was successfully consolidated from twelve nodes to six larger instances, enhancing utilization and minimizing idle capacity. The new instances have effectively managed both normal and peak loads since the consolidation, leading to a reduction in the autoscaling maximum from twelve to six instances to secure cost savings. Additionally, two outdated deployment configurations were eliminated, and the CDN cache hit rate improved to 94 percent following optimization efforts. The review also noted the successful completion of a quarterly disaster-recovery drill and the expansion of synthetic monitoring to include three more user journeys.",
+          "word_count": 103
+        },
+        "multi_hop_2": {
+          "prompt": "Summarize the following report in two sentences.\n\nThe capacity planning review for the web tier indicates that production traffic was successfully consolidated from twelve nodes to six larger instances, enhancing utilization and minimizing idle capacity. The new instances have effectively managed both normal and peak loads since the consolidation, leading to a reduction in the autoscaling maximum from twelve to six instances to secure cost savings. Additionally, two outdated deployment configurations were eliminated, and the CDN cache hit rate improved to 94 percent following optimization efforts. The review also noted the successful completion of a quarterly disaster-recovery drill and the expansion of synthetic monitoring to include three more user journeys.",
+          "response": "The web tier's capacity planning review revealed successful consolidation of production traffic from twelve nodes to six larger instances, improving utilization and reducing costs while effectively managing load. Additionally, the review highlighted the elimination of outdated deployment configurations, an improved CDN cache hit rate of 94 percent, the completion of a disaster-recovery drill, and the expansion of synthetic monitoring to cover three more user journeys.",
+          "word_count": 65
+        },
+        "multi_hop_3": {
+          "prompt": "Summarize the following in one sentence of no more than 25 words.\n\nThe web tier's capacity planning review revealed successful consolidation of production traffic from twelve nodes to six larger instances, improving utilization and reducing costs while effectively managing load. Additionally, the review highlighted the elimination of outdated deployment configurations, an improved CDN cache hit rate of 94 percent, the completion of a disaster-recovery drill, and the expansion of synthetic monitoring to cover three more user journeys.",
+          "response": "The web tier's capacity planning improved efficiency by consolidating nodes, enhancing CDN performance, updating configurations, completing a disaster-recovery drill, and expanding monitoring.",
+          "word_count": 22
+        },
+        "multi_hop_reader": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nThe web tier's capacity planning improved efficiency by consolidating nodes, enhancing CDN performance, updating configurations, completing a disaster-recovery drill, and expanding monitoring.",
+          "response": "There are no immediate risks or issues indicated in the summary that require urgent attention. The improvements mentioned suggest proactive measures have been taken to enhance performance and reliability."
+        }
+      }
+    }
+  ]
+}

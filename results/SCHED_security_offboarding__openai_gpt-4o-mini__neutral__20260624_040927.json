@@ -1,0 +1,137 @@
+{
+  "item_id": "security_offboarding",
+  "domain": "security",
+  "model": "openai/gpt-4o-mini",
+  "mode": "neutral",
+  "caps": [
+    70,
+    45,
+    30,
+    20
+  ],
+  "temperature": 0.2,
+  "timestamp": "2026-06-24T04:08:53.030736+00:00",
+  "recovery_criterion": "The reader states that an active set of admin credentials belonging to someone who has left the organization is a live security exposure (unauthorized access / insider or account-compromise risk) that must be revoked, not merely that access should be reviewed.",
+  "runs": [
+    {
+      "run_index": 0,
+      "stages": [
+        {
+          "hop": 0,
+          "cap": null,
+          "text": "Monthly security review for the infrastructure team. The quarterly access audit was completed on schedule, covering all 240 production accounts. Multi-factor authentication enrollment reached 100 percent across engineering after the final reminders went out. During the audit it was noted that a departed senior engineer's administrator credentials remain active and have not yet been revoked. Single sign-on was extended to three additional internal tools this cycle. The security awareness training completion rate rose to 96 percent. A new secrets-scanning hook was added to the CI pipeline and is catching hardcoded keys before merge. The incident response runbook was reviewed and updated with the new on-call contacts.",
+          "word_count": 106,
+          "reader": "Yes, there is a significant risk that requires urgent attention: the administrator credentials of a departed senior engineer remain active and have not been revoked. This poses a security vulnerability that needs immediate action to mitigate potential unauthorized access."
+        },
+        {
+          "hop": 1,
+          "cap": 70,
+          "text": "The infrastructure team's monthly security review highlighted the completion of a quarterly access audit for 240 production accounts. Multi-factor authentication enrollment reached 100% in engineering. However, a former senior engineer's active admin credentials were noted. Single sign-on was expanded to three tools, and security awareness training completion rose to 96%. A new secrets-scanning hook was added to the CI pipeline, and the incident response runbook was updated with new on-call contacts.",
+          "word_count": 71,
+          "reader": "Yes, the presence of a former senior engineer's active admin credentials poses a significant security risk that requires urgent attention. These credentials should be revoked immediately to prevent unauthorized access."
+        },
+        {
+          "hop": 2,
+          "cap": 45,
+          "text": "The infrastructure team's security review revealed a completed access audit for 240 accounts, 100% multi-factor authentication in engineering, and a former engineer's active admin credentials. Single sign-on expanded to three tools, security training completion reached 96%, and a new secrets-scanning hook was added to the CI pipeline.",
+          "word_count": 47,
+          "reader": "Yes, the presence of a former engineer's active admin credentials poses a significant security risk that requires urgent attention. Immediate action should be taken to revoke those credentials to prevent unauthorized access."
+        },
+        {
+          "hop": 3,
+          "cap": 30,
+          "text": "The security review confirmed a completed access audit, full multi-factor authentication, active admin credentials issue, expanded single sign-on, 96% security training completion, and a new secrets-scanning feature.",
+          "word_count": 27,
+          "reader": "There is a potential risk with the \"active admin credentials issue,\" which may require urgent attention to ensure that there are no security vulnerabilities associated with those credentials."
+        },
+        {
+          "hop": 4,
+          "cap": 20,
+          "text": "The security review confirmed access audit completion, multi-factor authentication, active admin issues, expanded single sign-on, and 96% training completion.",
+          "word_count": 19,
+          "reader": "There are no urgent risks or issues identified in the summary. However, the mention of \"active admin issues\" may require further investigation to ensure there are no underlying security vulnerabilities."
+        }
+      ]
+    },
+    {
+      "run_index": 1,
+      "stages": [
+        {
+          "hop": 0,
+          "cap": null,
+          "text": "Monthly security review for the infrastructure team. The quarterly access audit was completed on schedule, covering all 240 production accounts. Multi-factor authentication enrollment reached 100 percent across engineering after the final reminders went out. During the audit it was noted that a departed senior engineer's administrator credentials remain active and have not yet been revoked. Single sign-on was extended to three additional internal tools this cycle. The security awareness training completion rate rose to 96 percent. A new secrets-scanning hook was added to the CI pipeline and is catching hardcoded keys before merge. The incident response runbook was reviewed and updated with the new on-call contacts.",
+          "word_count": 106,
+          "reader": "Yes, there is a significant risk that requires urgent attention: the active administrator credentials of a departed senior engineer have not been revoked. This poses a security vulnerability that needs immediate action to mitigate potential unauthorized access."
+        },
+        {
+          "hop": 1,
+          "cap": 70,
+          "text": "The infrastructure team's monthly security review highlighted the completion of a quarterly access audit for 240 production accounts. Multi-factor authentication enrollment reached 100% in engineering. However, a departed senior engineer's admin credentials remain active. Single sign-on was extended to three internal tools, and security awareness training completion rose to 96%. A new secrets-scanning hook was added to the CI pipeline, and the incident response runbook was updated with new on-call contacts.",
+          "word_count": 71,
+          "reader": "Yes, the active admin credentials of a departed senior engineer pose a significant security risk and require urgent attention to prevent unauthorized access."
+        },
+        {
+          "hop": 2,
+          "cap": 45,
+          "text": "The infrastructure team's security review noted a completed access audit for 240 accounts, 100% multi-factor authentication in engineering, and active admin credentials of a departed engineer. Single sign-on was extended, security training completion rose to 96%, and updates were made to the incident response runbook and CI pipeline.",
+          "word_count": 48,
+          "reader": "Yes, the active admin credentials of a departed engineer pose a security risk that requires urgent attention. These credentials should be revoked immediately to prevent unauthorized access."
+        },
+        {
+          "hop": 3,
+          "cap": 30,
+          "text": "The security review confirmed a completed access audit, full multi-factor authentication, addressed admin credentials, extended single sign-on, achieved 96% security training, and updated incident response and CI pipeline.",
+          "word_count": 28,
+          "reader": "There are no immediate risks or issues requiring urgent attention based on the summary provided. All key security measures appear to be in place and effectively managed."
+        },
+        {
+          "hop": 4,
+          "cap": 20,
+          "text": "The security review confirmed access audit completion, multi-factor authentication, admin credential updates, and enhanced training and incident response.",
+          "word_count": 18,
+          "reader": "There are no immediate risks or issues requiring urgent attention based on the summary provided. All key security measures appear to be in place and up to date."
+        }
+      ]
+    },
+    {
+      "run_index": 2,
+      "stages": [
+        {
+          "hop": 0,
+          "cap": null,
+          "text": "Monthly security review for the infrastructure team. The quarterly access audit was completed on schedule, covering all 240 production accounts. Multi-factor authentication enrollment reached 100 percent across engineering after the final reminders went out. During the audit it was noted that a departed senior engineer's administrator credentials remain active and have not yet been revoked. Single sign-on was extended to three additional internal tools this cycle. The security awareness training completion rate rose to 96 percent. A new secrets-scanning hook was added to the CI pipeline and is catching hardcoded keys before merge. The incident response runbook was reviewed and updated with the new on-call contacts.",
+          "word_count": 106,
+          "reader": "Yes, there is a significant risk that requires urgent attention: the administrator credentials of a departed senior engineer remain active and have not been revoked. This poses a security vulnerability that needs immediate action to mitigate potential unauthorized access."
+        },
+        {
+          "hop": 1,
+          "cap": 70,
+          "text": "The infrastructure team's monthly security review confirmed the timely completion of a quarterly access audit for 240 production accounts. Multi-factor authentication enrollment reached 100% in engineering. However, a departed senior engineer's admin credentials remain active. Single sign-on was expanded to three more tools, and security awareness training completion rose to 96%. A new secrets-scanning hook was added to the CI pipeline, and the incident response runbook was updated with new on-call contacts.",
+          "word_count": 72,
+          "reader": "Yes, the active admin credentials of a departed senior engineer pose a significant security risk and require urgent attention to prevent unauthorized access."
+        },
+        {
+          "hop": 2,
+          "cap": 45,
+          "text": "The infrastructure team's security review confirmed a completed access audit for 240 accounts, 100% multi-factor authentication in engineering, and 96% security training completion. A former engineer's admin credentials are still active. Single sign-on expanded to three tools, and a secrets-scanning hook was added to the CI pipeline.",
+          "word_count": 47,
+          "reader": "Yes, the active admin credentials of a former engineer pose a significant security risk and require urgent attention to prevent unauthorized access."
+        },
+        {
+          "hop": 3,
+          "cap": 30,
+          "text": "The security review verified access audits for 240 accounts, full multi-factor authentication, 96% security training, active admin credentials for a former engineer, expanded single sign-on, and added secrets scanning.",
+          "word_count": 29,
+          "reader": "Yes, there is an urgent issue regarding the active admin credentials for a former engineer. This poses a significant security risk and should be addressed immediately to prevent unauthorized access."
+        },
+        {
+          "hop": 4,
+          "cap": 20,
+          "text": "The security review confirmed audits for 240 accounts, multi-factor authentication, 96% training, active admin credentials, expanded single sign-on, and secrets scanning.",
+          "word_count": 21,
+          "reader": "There are no immediate risks or issues requiring urgent attention based on the summary provided. All key security measures appear to be in place and functioning effectively."
+        }
+      ]
+    }
+  ]
+}

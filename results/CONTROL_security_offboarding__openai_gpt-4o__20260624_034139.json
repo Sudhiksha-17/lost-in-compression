@@ -1,0 +1,74 @@
+{
+  "item_id": "security_offboarding",
+  "domain": "security",
+  "model": "openai/gpt-4o",
+  "temperature": 0.2,
+  "cap": 30,
+  "timestamp": "2026-06-24T03:41:16.424837+00:00",
+  "recovery_criterion": "The reader states that an active set of admin credentials belonging to someone who has left the organization is a live security exposure (unauthorized access / insider or account-compromise risk) that must be revoked, not merely that access should be reviewed.",
+  "control": [
+    {
+      "instruction": "neutral",
+      "run_index": 0,
+      "summary": "The infrastructure team's monthly security review highlighted the completion of a quarterly access audit, full MFA enrollment, SSO extension, improved security training rates, and updates to the incident response runbook.",
+      "summary_word_count": 30,
+      "reader": "No, there doesn't appear to be any risk or issue requiring urgent attention. The summary indicates positive progress in security measures."
+    },
+    {
+      "instruction": "neutral",
+      "run_index": 1,
+      "summary": "The infrastructure team's monthly security review highlighted a completed access audit, full MFA enrollment, active credentials of a departed engineer, extended SSO, improved training rates, and updated incident response protocols.",
+      "summary_word_count": 30,
+      "reader": "Yes, the active credentials of a departed engineer require urgent attention. These credentials should be revoked immediately to prevent unauthorized access."
+    },
+    {
+      "instruction": "neutral",
+      "run_index": 2,
+      "summary": "The infrastructure team's monthly security review highlighted the completion of the quarterly access audit, 100% MFA enrollment, SSO expansion, improved security training rates, and updates to the incident response runbook.",
+      "summary_word_count": 30,
+      "reader": "No, there doesn't appear to be any risk or issue requiring urgent attention. The summary indicates positive progress in security measures and updates."
+    },
+    {
+      "instruction": "risk_aware",
+      "run_index": 0,
+      "summary": "The infrastructure team's monthly security review highlighted the need to revoke a departed engineer's active credentials, while noting full MFA enrollment, extended SSO, and improved security training completion.",
+      "summary_word_count": 28,
+      "reader": "Yes, there is a risk that requires urgent attention. The departed engineer's active credentials need to be revoked immediately to prevent unauthorized access to the system."
+    },
+    {
+      "instruction": "risk_aware",
+      "run_index": 1,
+      "summary": "The monthly security review noted successful completion of the quarterly access audit and MFA enrollment, but highlighted the need to revoke a departed engineer's active credentials.",
+      "summary_word_count": 26,
+      "reader": "Yes, there is an urgent issue that requires attention: the active credentials of the departed engineer need to be revoked to prevent unauthorized access."
+    },
+    {
+      "instruction": "risk_aware",
+      "run_index": 2,
+      "summary": "The monthly security review highlighted successful completion of the quarterly access audit and full MFA enrollment, but noted a critical issue with active credentials of a departed engineer needing revocation.",
+      "summary_word_count": 30,
+      "reader": "Yes, there is a critical issue that requires urgent attention: the active credentials of a departed engineer need to be revoked to prevent unauthorized access."
+    },
+    {
+      "instruction": "preserve_all",
+      "run_index": 0,
+      "summary": "The quarterly access audit was completed on time for 240 accounts, MFA enrollment hit 100%, a departed engineer's credentials remain active, SSO extended to three tools, security training reached 96%, a secrets-scanning hook was added to the CI pipeline, and the incident response runbook was updated.",
+      "summary_word_count": 46,
+      "reader": "Yes, the departed engineer's credentials remaining active is a risk that requires urgent attention. These credentials should be deactivated immediately to prevent unauthorized access."
+    },
+    {
+      "instruction": "preserve_all",
+      "run_index": 1,
+      "summary": "The infrastructure team's monthly security review noted the completion of the quarterly access audit for 240 accounts, 100% MFA enrollment, active credentials for a departed engineer, SSO extension, 96% training completion, a new secrets-scanning hook, and an updated incident response runbook.",
+      "summary_word_count": 41,
+      "reader": "Yes, there is a risk that requires urgent attention: the active credentials for a departed engineer should be revoked immediately to prevent unauthorized access."
+    },
+    {
+      "instruction": "preserve_all",
+      "run_index": 2,
+      "summary": "The infrastructure team's monthly security review noted the completion of a quarterly access audit, 100% MFA enrollment, active credentials for a departed engineer, SSO extension, 96% training completion, a new CI secrets-scanning hook, and an updated incident response runbook.",
+      "summary_word_count": 39,
+      "reader": "Yes, the active credentials for a departed engineer require urgent attention. These credentials should be revoked immediately to prevent any unauthorized access."
+    }
+  ]
+}

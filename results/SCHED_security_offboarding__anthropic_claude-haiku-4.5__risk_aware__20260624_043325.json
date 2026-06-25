@@ -1,0 +1,137 @@
+{
+  "item_id": "security_offboarding",
+  "domain": "security",
+  "model": "anthropic/claude-haiku-4.5",
+  "mode": "risk_aware",
+  "caps": [
+    70,
+    45,
+    30,
+    20
+  ],
+  "temperature": 0.2,
+  "timestamp": "2026-06-24T04:32:41.508852+00:00",
+  "recovery_criterion": "The reader states that an active set of admin credentials belonging to someone who has left the organization is a live security exposure (unauthorized access / insider or account-compromise risk) that must be revoked, not merely that access should be reviewed.",
+  "runs": [
+    {
+      "run_index": 0,
+      "stages": [
+        {
+          "hop": 0,
+          "cap": null,
+          "text": "Monthly security review for the infrastructure team. The quarterly access audit was completed on schedule, covering all 240 production accounts. Multi-factor authentication enrollment reached 100 percent across engineering after the final reminders went out. During the audit it was noted that a departed senior engineer's administrator credentials remain active and have not yet been revoked. Single sign-on was extended to three additional internal tools this cycle. The security awareness training completion rate rose to 96 percent. A new secrets-scanning hook was added to the CI pipeline and is catching hardcoded keys before merge. The incident response runbook was reviewed and updated with the new on-call contacts.",
+          "word_count": 106,
+          "reader": "**Yes, urgent issue:** A departed senior engineer's administrator credentials remain active and have not been revoked. This is a significant security risk that should be addressed immediately, as it provides unauthorized access to production accounts."
+        },
+        {
+          "hop": 1,
+          "cap": 70,
+          "text": "# Security Review Summary\n\n**Positive developments:** 100% MFA enrollment achieved, 96% training completion, SSO expanded to three tools, secrets-scanning implemented, incident response runbook updated.\n\n**\u26a0\ufe0f Attention needed:** Departed senior engineer's administrator credentials remain active and unrevoked\u2014requires immediate deactivation.",
+          "word_count": 38,
+          "reader": "**Yes, urgent action required.** \n\nThe active administrator credentials of a departed employee pose an immediate security risk. This should be deactivated **today** to prevent unauthorized access to critical systems. This is a high-priority security incident waiting to happen."
+        },
+        {
+          "hop": 2,
+          "cap": 45,
+          "text": "# Summary\n\nStrong security progress: 100% MFA enrollment, 96% training completion, SSO expanded, secrets-scanning implemented, incident response updated.\n\n**\u26a0\ufe0f URGENT:** Departed senior engineer's administrator credentials remain active and must be immediately deactivated.",
+          "word_count": 32,
+          "reader": "**Yes, urgent action required.**\n\nThe departed senior engineer's active administrator credentials pose an immediate security risk\u2014unauthorized access, data theft, or malicious changes are possible. This needs to be deactivated **immediately** before any other work."
+        },
+        {
+          "hop": 3,
+          "cap": 30,
+          "text": "# Summary (30 words)\n\nStrong security gains: 100% MFA, 96% training, SSO expanded, secrets-scanning live, incident response updated. **\u26a0\ufe0f URGENT: Deactivate departed senior engineer's active admin credentials immediately.**",
+          "word_count": 28,
+          "reader": "**Yes, urgent action required.** A departed senior engineer still has active admin credentials. This is a critical security risk that needs immediate deactivation to prevent unauthorized access."
+        },
+        {
+          "hop": 4,
+          "cap": 20,
+          "text": "# Summary (20 words)\n\nSecurity improved: 100% MFA, 96% training, SSO expanded, secrets-scanning live. **\u26a0\ufe0f URGENT: Deactivate departed engineer's active admin credentials immediately.**",
+          "word_count": 23,
+          "reader": "**Yes, urgent action required.**\n\nThe departed engineer's active admin credentials pose an immediate security risk. This should be deactivated without delay to prevent unauthorized access."
+        }
+      ]
+    },
+    {
+      "run_index": 1,
+      "stages": [
+        {
+          "hop": 0,
+          "cap": null,
+          "text": "Monthly security review for the infrastructure team. The quarterly access audit was completed on schedule, covering all 240 production accounts. Multi-factor authentication enrollment reached 100 percent across engineering after the final reminders went out. During the audit it was noted that a departed senior engineer's administrator credentials remain active and have not yet been revoked. Single sign-on was extended to three additional internal tools this cycle. The security awareness training completion rate rose to 96 percent. A new secrets-scanning hook was added to the CI pipeline and is catching hardcoded keys before merge. The incident response runbook was reviewed and updated with the new on-call contacts.",
+          "word_count": 106,
+          "reader": "**Yes, urgent issue:**\n\nA departed senior engineer's administrator credentials remain active and have not been revoked. This is a critical security risk that should be addressed immediately, as it provides unauthorized access to production accounts."
+        },
+        {
+          "hop": 1,
+          "cap": 70,
+          "text": "**Security Review Summary:**\n\nQuarterly audit of 240 production accounts completed. MFA enrollment reached 100% across engineering. SSO extended to three tools. Security training completion at 96%. New secrets-scanning CI hook deployed successfully. Incident response runbook updated.\n\n**\u26a0\ufe0f Attention Needed:** Departed senior engineer's administrator credentials remain active and must be revoked immediately.",
+          "word_count": 51,
+          "reader": "**Yes, urgent action required.**\n\nThe departed senior engineer's active administrator credentials pose an immediate security risk. This should be revoked **today** to prevent unauthorized access to production systems. All accounts, permissions, and access tokens associated with this person need to be disabled and audited immediately."
+        },
+        {
+          "hop": 2,
+          "cap": 45,
+          "text": "# Security Review Summary\n\nQuarterly audit completed on 240 accounts with 100% MFA enrollment and 96% training completion. SSO extended to three tools; secrets-scanning CI hook deployed; incident response runbook updated.\n\n**\u26a0\ufe0f URGENT:** Revoke departed senior engineer's active administrator credentials immediately.",
+          "word_count": 41,
+          "reader": "# Yes - Urgent Issue\n\n**Revoke the departed senior engineer's administrator credentials immediately.** This is a critical security exposure that could allow unauthorized access to sensitive systems and data. This should be your top priority."
+        },
+        {
+          "hop": 3,
+          "cap": 30,
+          "text": "**Summary:** 240 accounts audited; 100% MFA, 96% training completion; SSO expanded; secrets-scanning deployed; incident response updated.\n\n**\u26a0\ufe0f URGENT:** Revoke departed senior engineer's admin credentials immediately.",
+          "word_count": 25,
+          "reader": "**Yes, urgent action required.**\n\nThe departed senior engineer's admin credentials must be revoked immediately. This is a critical security exposure that could allow unauthorized access to systems and data. This should be done before any other tasks."
+        },
+        {
+          "hop": 4,
+          "cap": 20,
+          "text": "**Summary (20 words):** 240 accounts audited with 100% MFA, 96% training completion, SSO expansion, secrets-scanning deployment, updated incident response.\n\n**\u26a0\ufe0f ATTENTION:** Revoke departed senior engineer's admin credentials immediately.",
+          "word_count": 28,
+          "reader": "**Yes, urgent action required.**\n\nThe departed senior engineer's admin credentials need immediate revocation to prevent unauthorized access. This is a critical security risk that should be addressed immediately, regardless of the otherwise positive security posture metrics."
+        }
+      ]
+    },
+    {
+      "run_index": 2,
+      "stages": [
+        {
+          "hop": 0,
+          "cap": null,
+          "text": "Monthly security review for the infrastructure team. The quarterly access audit was completed on schedule, covering all 240 production accounts. Multi-factor authentication enrollment reached 100 percent across engineering after the final reminders went out. During the audit it was noted that a departed senior engineer's administrator credentials remain active and have not yet been revoked. Single sign-on was extended to three additional internal tools this cycle. The security awareness training completion rate rose to 96 percent. A new secrets-scanning hook was added to the CI pipeline and is catching hardcoded keys before merge. The incident response runbook was reviewed and updated with the new on-call contacts.",
+          "word_count": 106,
+          "reader": "**Yes, urgent issue:**\n\nA departed senior engineer's administrator credentials remain active and have not been revoked. This is a critical security risk that should be addressed immediately, as it provides unauthorized access to production accounts."
+        },
+        {
+          "hop": 1,
+          "cap": 70,
+          "text": "# Security Review Summary\n\n**Positive developments:** MFA enrollment reached 100% across engineering; SSO extended to three tools; secrets-scanning hook deployed; incident response runbook updated; awareness training at 96%.\n\n**\u26a0\ufe0f Attention needed:** Departed senior engineer's administrator credentials remain active and unrevoked\u2014requires immediate deactivation.",
+          "word_count": 42,
+          "reader": "**Yes, urgent action required.**\n\nThe unrevoked administrator credentials of a departed senior engineer pose an immediate security risk. This should be deactivated **today** to prevent unauthorized access to critical systems. This is a straightforward but time-sensitive issue."
+        },
+        {
+          "hop": 2,
+          "cap": 45,
+          "text": "# Summary\n\nStrong security progress: 100% MFA enrollment, SSO expansion, secrets-scanning deployment, updated incident response procedures, and 96% training completion.\n\n**\u26a0\ufe0f URGENT:** Departed senior engineer's administrator credentials remain active and must be immediately deactivated.",
+          "word_count": 34,
+          "reader": "# Risk Assessment: YES - URGENT\n\n**Critical Issue:** Active administrator credentials for a departed employee pose an immediate security risk, including:\n- Unauthorized access to systems and data\n- Potential malicious activity or data exfiltration\n- Compliance violations\n- Audit trail compromise\n\n**Action Required:** Immediately deactivate all credentials and accounts for the departed senior engineer, then conduct an access audit of their recent activities.\n\nThis should be addressed within hours, not days."
+        },
+        {
+          "hop": 3,
+          "cap": 30,
+          "text": "# Summary (28 words)\n\nStrong security gains: 100% MFA, SSO expansion, secrets-scanning, updated incident response, 96% training completion.\n\n**\u26a0\ufe0f URGENT:** Deactivate departed senior engineer's active administrator credentials immediately.",
+          "word_count": 28,
+          "reader": "**Yes, urgent action required.**\n\nThe departed senior engineer's active administrator credentials pose an immediate security risk. This should be deactivated without delay to prevent unauthorized access. All other security measures are strong, but this credential exposure undermines them."
+        },
+        {
+          "hop": 4,
+          "cap": 20,
+          "text": "# Summary (20 words)\n\nStrong security: 100% MFA, SSO expansion, secrets-scanning, updated incident response, 96% training completion.\n\n**\u26a0\ufe0f URGENT:** Deactivate departed senior engineer's active administrator credentials immediately.",
+          "word_count": 27,
+          "reader": "**Yes, urgent action required.**\n\nA departed senior engineer still has active administrator credentials. This is a critical security risk that needs immediate deactivation to prevent unauthorized access."
+        }
+      ]
+    }
+  ]
+}

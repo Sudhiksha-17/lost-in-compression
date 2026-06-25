@@ -1,0 +1,137 @@
+{
+  "item_id": "infra_migration",
+  "domain": "infrastructure",
+  "model": "anthropic/claude-haiku-4.5",
+  "mode": "risk_aware",
+  "caps": [
+    70,
+    45,
+    30,
+    20
+  ],
+  "temperature": 0.2,
+  "timestamp": "2026-06-24T04:29:23.793151+00:00",
+  "recovery_criterion": "The reader states that current/live customer data is unprotected or at risk of loss because backups are targeting the old instance rather than the new one (a backup/recoverability gap created by the migration), not merely that backups should be checked.",
+  "runs": [
+    {
+      "run_index": 0,
+      "stages": [
+        {
+          "hop": 0,
+          "cap": null,
+          "text": "Weekly infrastructure review for the platform team. The primary customer database was migrated to a new high-availability instance over the weekend, completing the planned hardware refresh ahead of schedule. Query latency on the new instance has improved by roughly 30 percent and connection stability has been stable since cutover. The automated nightly backup job still points at the old database instance. Two new read replicas were provisioned to support the analytics workload. The staging environment was refreshed to mirror the new production topology. Dashboard panels were updated to reflect the new instance names. The on-call rotation was handed over to the incoming engineer for the next cycle. A minor logging verbosity issue was identified and downgraded to a follow-up ticket. Documentation for the new topology was drafted and is pending review.",
+          "word_count": 131,
+          "reader": "**Yes, one urgent issue:**\n\nThe automated nightly backup job still points to the old database instance. This needs immediate correction to ensure the new production database is being backed up. If not fixed before the next backup cycle, you risk having no current backups of your primary database.\n\n**Recommended action:** Redirect the backup job to the new instance immediately."
+        },
+        {
+          "hop": 1,
+          "cap": 70,
+          "text": "**Infrastructure Review Summary:**\n\nPrimary database successfully migrated to high-availability instance ahead of schedule with 30% latency improvement and stable connections. Two read replicas added for analytics. Staging environment updated to match production topology.\n\n**\u26a0\ufe0f Needs Attention:**\n- Automated nightly backup job still targets old database instance\u2014requires immediate reconfiguration\n- Documentation pending review",
+          "word_count": 52,
+          "reader": "**Yes, urgent attention needed:**\n\nThe automated backup job pointing to the old database instance is a critical issue. If the old instance is decommissioned or fails, you'll lose backup coverage on your primary database. This should be reconfigured immediately before any further infrastructure changes.\n\nThe documentation can wait, but the backup configuration cannot."
+        },
+        {
+          "hop": 2,
+          "cap": 45,
+          "text": "**Summary:** Database migration completed early with 30% latency improvement and stable connections. Two read replicas added; staging environment updated to match production.\n\n**\u26a0\ufe0f Attention Needed:** Backup job still targets old instance (requires immediate fix); documentation pending review.",
+          "word_count": 37,
+          "reader": "**Yes, there are two issues requiring attention:**\n\n1. **Urgent:** The backup job targeting the old instance needs immediate fixing to prevent data loss or failed backups.\n\n2. **Important:** Documentation should be updated soon to reflect the new setup and prevent operational confusion.\n\nThe backup issue is the priority\u2014address that first."
+        },
+        {
+          "hop": 3,
+          "cap": 30,
+          "text": "**Summary:** Database migration completed early with 30% latency improvement. Two read replicas added; staging updated.\n\n**\u26a0\ufe0f Attention:** Backup job targets old instance (fix immediately); documentation pending review.",
+          "word_count": 27,
+          "reader": "**Yes, urgent attention needed:**\n\n1. **Critical:** Backup job still targets the old database instance. This is a data protection risk\u2014fix immediately to ensure backups are capturing the new system.\n\n2. **Important:** Update documentation promptly so the team operates with current information.\n\nThe latency improvement is good, but the backup misconfiguration could leave you vulnerable to data loss."
+        },
+        {
+          "hop": 4,
+          "cap": 20,
+          "text": "**Summary:** Database migration complete, 30% latency improvement, two read replicas added, staging updated.\n\n**\u26a0\ufe0f Attention:** Fix backup job targeting old instance immediately; review pending documentation.",
+          "word_count": 25,
+          "reader": "**Yes, there is an urgent issue:**\n\nThe backup job is still targeting the old database instance. This needs immediate attention to prevent data loss and ensure proper disaster recovery. Fix this before the old instance is decommissioned.\n\nThe documentation review is lower priority but should be completed soon."
+        }
+      ]
+    },
+    {
+      "run_index": 1,
+      "stages": [
+        {
+          "hop": 0,
+          "cap": null,
+          "text": "Weekly infrastructure review for the platform team. The primary customer database was migrated to a new high-availability instance over the weekend, completing the planned hardware refresh ahead of schedule. Query latency on the new instance has improved by roughly 30 percent and connection stability has been stable since cutover. The automated nightly backup job still points at the old database instance. Two new read replicas were provisioned to support the analytics workload. The staging environment was refreshed to mirror the new production topology. Dashboard panels were updated to reflect the new instance names. The on-call rotation was handed over to the incoming engineer for the next cycle. A minor logging verbosity issue was identified and downgraded to a follow-up ticket. Documentation for the new topology was drafted and is pending review.",
+          "word_count": 131,
+          "reader": "**Yes, one urgent issue:**\n\nThe automated nightly backup job still points to the old database instance. This needs immediate correction to ensure backups are protecting the new production database. If the old instance is decommissioned or fails, you'll lose backup coverage.\n\n**Recommended action:** Redirect the backup job to the new instance immediately, then verify the next backup completes successfully."
+        },
+        {
+          "hop": 1,
+          "cap": 70,
+          "text": "**Infrastructure Review Summary:**\n\nPrimary database successfully migrated to high-availability instance ahead of schedule with 30% latency improvement and stable connections. Two read replicas added for analytics. Staging environment updated to match production topology.\n\n**\u26a0\ufe0f Needs Attention:**\n- Automated nightly backup job still targets old database instance\u2014requires immediate reconfiguration\n- Documentation pending review",
+          "word_count": 52,
+          "reader": "**Yes, there is one urgent issue:**\n\nThe automated backup job targeting the old database instance needs immediate reconfiguration. If not fixed, you risk losing backup coverage on your new primary database, which could be catastrophic for disaster recovery. This should be addressed today.\n\nThe documentation review is lower priority by comparison."
+        },
+        {
+          "hop": 2,
+          "cap": 45,
+          "text": "**Summary:** Database migration completed early with 30% latency improvement and stable connections. Two read replicas added; staging environment updated to match production.\n\n**\u26a0\ufe0f Attention Needed:** Automated backup job still targets old instance\u2014requires immediate reconfiguration. Documentation pending review.",
+          "word_count": 37,
+          "reader": "**Yes, urgent attention needed:**\n\nThe automated backup job targeting the old instance is a critical issue. If backups aren't redirected to the new database, you risk:\n- Data loss if the old instance fails\n- No recovery point for the migrated database\n\n**Action:** Immediately reconfigure the backup job to target the new instance before any incident occurs. Documentation can follow, but this should be done today."
+        },
+        {
+          "hop": 3,
+          "cap": 30,
+          "text": "**Summary:** Database migration completed early with 30% latency improvement. Two read replicas added; staging updated.\n\n**\u26a0\ufe0f Attention:** Backup job targets old instance (needs immediate fix). Documentation pending review.",
+          "word_count": 28,
+          "reader": "**Yes, urgent issue:**\n\nThe backup job still targeting the old database instance is a critical risk. If the old instance is decommissioned or fails, you'll lose backup coverage. This needs immediate fixing before proceeding further."
+        },
+        {
+          "hop": 4,
+          "cap": 20,
+          "text": "**Summary:** Database migration complete, 30% latency improvement, two read replicas added, staging updated.\n\n**\u26a0\ufe0f Attention:** Backup job targets old instance\u2014fix immediately. Documentation pending.",
+          "word_count": 23,
+          "reader": "**Yes, urgent action needed:**\n\n1. **Critical:** Backup job still targeting old database instance\u2014this is a data loss risk. Fix immediately before old instance is decommissioned.\n\n2. **Important:** Update documentation to reflect new architecture before team relies on outdated info.\n\nRecommend: Redirect backups first, then update docs."
+        }
+      ]
+    },
+    {
+      "run_index": 2,
+      "stages": [
+        {
+          "hop": 0,
+          "cap": null,
+          "text": "Weekly infrastructure review for the platform team. The primary customer database was migrated to a new high-availability instance over the weekend, completing the planned hardware refresh ahead of schedule. Query latency on the new instance has improved by roughly 30 percent and connection stability has been stable since cutover. The automated nightly backup job still points at the old database instance. Two new read replicas were provisioned to support the analytics workload. The staging environment was refreshed to mirror the new production topology. Dashboard panels were updated to reflect the new instance names. The on-call rotation was handed over to the incoming engineer for the next cycle. A minor logging verbosity issue was identified and downgraded to a follow-up ticket. Documentation for the new topology was drafted and is pending review.",
+          "word_count": 131,
+          "reader": "**Yes, one urgent issue:**\n\nThe automated nightly backup job still points to the old database instance. This needs immediate correction to ensure backups are protecting the new production database. If the old instance is decommissioned or fails, you'll lose backup coverage.\n\n**Recommended action:** Redirect the backup job to the new instance immediately, then verify the next backup completes successfully."
+        },
+        {
+          "hop": 1,
+          "cap": 70,
+          "text": "**Infrastructure Review Summary:**\n\nPrimary database successfully migrated to high-availability instance ahead of schedule with 30% latency improvement and stable connections. Two read replicas added for analytics. Staging environment updated to match production topology.\n\n**\u26a0\ufe0f Needs Attention:**\n- Automated nightly backup job still points to old database instance\u2014requires immediate reconfiguration\n- Documentation pending review",
+          "word_count": 53,
+          "reader": "**Yes, there is one urgent issue:**\n\nThe automated nightly backup job pointing to the old database instance needs **immediate reconfiguration**. If not fixed before the next backup cycle, you risk:\n- Losing recent production data (backups won't capture new changes)\n- No valid recovery point if disaster strikes\n\n**Action:** Reconfigure the backup job to target the new high-availability instance before the next scheduled run.\n\nThe documentation can wait, but this cannot."
+        },
+        {
+          "hop": 2,
+          "cap": 45,
+          "text": "**Summary:** Database migration completed early with 30% latency improvement and stable connections. Two read replicas added; staging environment updated to match production.\n\n**\u26a0\ufe0f Attention needed:** Automated backup job still targets old database instance\u2014requires immediate reconfiguration. Documentation pending review.",
+          "word_count": 38,
+          "reader": "**Yes, urgent attention required:**\n\nThe automated backup job targeting the old database instance is a critical issue. If the old instance is decommissioned or fails, you'll lose backup coverage on your production data. This needs immediate reconfiguration before any further infrastructure changes.\n\nThe pending documentation review is secondary but should follow quickly to prevent operational confusion."
+        },
+        {
+          "hop": 3,
+          "cap": 30,
+          "text": "**Summary:** Database migration completed early with 30% latency improvement. Two read replicas added; staging environment updated.\n\n**\u26a0\ufe0f Attention:** Backup job targets old instance\u2014needs immediate reconfiguration. Documentation pending review.",
+          "word_count": 28,
+          "reader": "**Yes, urgent attention needed:**\n\n1. **Critical:** Backup job still targeting old instance\u2014reconfigure immediately to avoid data loss if the old instance is decommissioned.\n\n2. **Important:** Update documentation before the changes are considered complete, to prevent operational confusion.\n\nPrioritize the backup reconfiguration first."
+        },
+        {
+          "hop": 4,
+          "cap": 20,
+          "text": "**Summary:** Database migration completed early with 30% latency improvement; two read replicas added; staging updated.\n\n**\u26a0\ufe0f Attention:** Backup job targets old instance (needs immediate reconfiguration); documentation pending review.",
+          "word_count": 28,
+          "reader": "**Yes, there is an urgent issue:**\n\nThe backup job still targets the old database instance. This is critical because:\n- Backups are failing to protect your new infrastructure\n- You have no recovery point for the migrated database\n- Data loss risk if issues occur before this is fixed\n\n**Action needed immediately:** Reconfigure the backup job to target the new instance before any further delays."
+        }
+      ]
+    }
+  ]
+}

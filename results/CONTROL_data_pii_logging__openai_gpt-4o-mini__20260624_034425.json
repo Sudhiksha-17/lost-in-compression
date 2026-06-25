@@ -1,0 +1,74 @@
+{
+  "item_id": "data_pii_logging",
+  "domain": "data_platform",
+  "model": "openai/gpt-4o-mini",
+  "temperature": 0.2,
+  "cap": 30,
+  "timestamp": "2026-06-24T03:44:02.372355+00:00",
+  "recovery_criterion": "The reader states that customer PII in plaintext logs is a data-exposure / privacy-breach risk (sensitive data is now readable wherever logs are stored or accessed, a compliance and breach exposure), not merely that logging settings should be reviewed.",
+  "control": [
+    {
+      "instruction": "neutral",
+      "run_index": 0,
+      "summary": "The engineering org's quarterly update highlights a 25% increase in pipeline throughput, improved data freshness, a logging issue with personal data, schema validation implementation, reduced analytics costs, decommissioned ETL jobs, and expanded data catalog coverage.",
+      "summary_word_count": 35,
+      "reader": "Yes, the logging issue with personal data requires urgent attention, as it poses a potential risk to data privacy and compliance."
+    },
+    {
+      "instruction": "neutral",
+      "run_index": 1,
+      "summary": "The engineering org's quarterly update highlights a 25% increase in pipeline throughput, improved data freshness, a logging issue exposing personal data, schema validation implementation, reduced analytics costs, decommissioned ETL jobs, and expanded data catalog coverage.",
+      "summary_word_count": 35,
+      "reader": "Yes, the logging issue exposing personal data requires urgent attention, as it poses a significant risk to data privacy and compliance."
+    },
+    {
+      "instruction": "neutral",
+      "run_index": 2,
+      "summary": "The engineering org's quarterly update highlights a 25% increase in pipeline throughput, improved data freshness, a logging issue exposing personal data, schema validation implementation, reduced analytics costs, decommissioned ETL jobs, and expanded data catalog coverage.",
+      "summary_word_count": 35,
+      "reader": "Yes, the logging issue exposing personal data requires urgent attention, as it poses a significant risk to data privacy and compliance."
+    },
+    {
+      "instruction": "risk_aware",
+      "run_index": 0,
+      "summary": "The engineering org's data-platform update shows improved pipeline throughput and data freshness, but attention is needed to disable a debug logging setting that exposes customer personal data in plaintext logs.",
+      "summary_word_count": 30,
+      "reader": "Yes, there is a significant risk that requires urgent attention. The debug logging setting exposing customer personal data in plaintext logs poses a serious security and privacy issue that must be addressed immediately to protect sensitive information."
+    },
+    {
+      "instruction": "risk_aware",
+      "run_index": 1,
+      "summary": "The engineering org's quarterly update shows improved pipeline throughput and data freshness, but a debug logging issue exposes customer data, requiring immediate attention.",
+      "summary_word_count": 23,
+      "reader": "Yes, the debug logging issue that exposes customer data requires urgent attention due to the potential risk of data breaches and privacy violations."
+    },
+    {
+      "instruction": "risk_aware",
+      "run_index": 2,
+      "summary": "The engineering org's data-platform update shows improved pipeline throughput and data freshness, but attention is needed to disable a debug logging setting that exposes customer personal data in plaintext logs.",
+      "summary_word_count": 30,
+      "reader": "Yes, there is an urgent issue that requires attention. The debug logging setting exposing customer personal data in plaintext logs poses a significant privacy and security risk. It should be disabled immediately to protect sensitive information."
+    },
+    {
+      "instruction": "preserve_all",
+      "run_index": 0,
+      "summary": "The engineering org's quarterly update highlights a 25% increase in pipeline throughput, improved data freshness, a debug logging issue exposing personal data, schema validation for malformed records, an 18% cost reduction in the analytics cluster, decommissioning of three legacy ETL jobs, and 95% coverage of production tables in the data catalog.",
+      "summary_word_count": 51,
+      "reader": "Yes, the debug logging issue exposing personal data requires urgent attention, as it poses a significant risk to data privacy and compliance."
+    },
+    {
+      "instruction": "preserve_all",
+      "run_index": 1,
+      "summary": "The engineering org's quarterly update shows a 25% increase in pipeline throughput, improved data freshness, a debug logging issue exposing personal data, added schema validation, an 18% cost reduction, decommissioned legacy ETL jobs, and a 95% data catalog coverage.",
+      "summary_word_count": 39,
+      "reader": "Yes, the debug logging issue exposing personal data requires urgent attention, as it poses a significant risk to data privacy and compliance."
+    },
+    {
+      "instruction": "preserve_all",
+      "run_index": 2,
+      "summary": "The engineering org's quarterly update highlights a 25% increase in pipeline throughput, improved data freshness, a debug logging issue exposing personal data, schema validation for malformed records, an 18% cost reduction in the analytics cluster, decommissioning of three legacy ETL jobs, and 95% coverage of production tables in the data catalog.",
+      "summary_word_count": 51,
+      "reader": "Yes, the debug logging issue exposing personal data requires urgent attention, as it poses a significant risk to data privacy and compliance."
+    }
+  ]
+}

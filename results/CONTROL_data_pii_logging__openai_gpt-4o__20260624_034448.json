@@ -1,0 +1,74 @@
+{
+  "item_id": "data_pii_logging",
+  "domain": "data_platform",
+  "model": "openai/gpt-4o",
+  "temperature": 0.2,
+  "cap": 30,
+  "timestamp": "2026-06-24T03:44:25.598728+00:00",
+  "recovery_criterion": "The reader states that customer PII in plaintext logs is a data-exposure / privacy-breach risk (sensitive data is now readable wherever logs are stored or accessed, a compliance and breach exposure), not merely that logging settings should be reviewed.",
+  "control": [
+    {
+      "instruction": "neutral",
+      "run_index": 0,
+      "summary": "The engineering org's quarterly update highlights a 25% increase in pipeline throughput, improved data freshness, cost reduction, schema validation, expanded data catalog coverage, and a logging issue exposing customer data.",
+      "summary_word_count": 30,
+      "reader": "Yes, the logging issue exposing customer data requires urgent attention as it poses a significant security and privacy risk."
+    },
+    {
+      "instruction": "neutral",
+      "run_index": 1,
+      "summary": "The engineering org's quarterly update highlights improved pipeline throughput and data freshness, reduced analytics costs, expanded data catalog coverage, but also a logging issue exposing customer data.",
+      "summary_word_count": 27,
+      "reader": "Yes, the logging issue exposing customer data requires urgent attention, as it poses a significant risk to customer privacy and data security."
+    },
+    {
+      "instruction": "neutral",
+      "run_index": 2,
+      "summary": "The engineering team's quarterly update highlights improved pipeline throughput and data freshness, reduced analytics costs, expanded data catalog coverage, but notes a critical logging issue exposing customer data.",
+      "summary_word_count": 28,
+      "reader": "Yes, the critical logging issue exposing customer data requires urgent attention as it poses a significant risk to data privacy and security."
+    },
+    {
+      "instruction": "risk_aware",
+      "run_index": 0,
+      "summary": "The quarterly update highlights a 25% pipeline throughput increase, improved data freshness, and cost savings, but urgent attention is needed to address customer data being logged in plaintext due to a debug setting.",
+      "summary_word_count": 33,
+      "reader": "Yes, urgent attention is needed to address the issue of customer data being logged in plaintext due to a debug setting, as it poses a significant security risk."
+    },
+    {
+      "instruction": "risk_aware",
+      "run_index": 1,
+      "summary": "The quarterly update highlights improved pipeline throughput and data freshness, cost reduction, and enhanced schema validation, but urgent attention is needed to address customer data being logged in plaintext due to a debug setting.",
+      "summary_word_count": 34,
+      "reader": "Yes, urgent attention is needed to address the issue of customer data being logged in plaintext due to a debug setting. This poses a significant security risk and could lead to data breaches or privacy violations."
+    },
+    {
+      "instruction": "risk_aware",
+      "run_index": 2,
+      "summary": "The quarterly update highlights a 25% pipeline throughput increase and improved data freshness, but urgent attention is needed to address customer data being logged in plaintext due to a debug setting.",
+      "summary_word_count": 31,
+      "reader": "Yes, there is an urgent issue that requires attention: customer data being logged in plaintext due to a debug setting. This poses a significant security risk and should be addressed immediately to protect sensitive information."
+    },
+    {
+      "instruction": "preserve_all",
+      "run_index": 0,
+      "summary": "The quarterly update highlights a 25% increase in pipeline throughput, improved data freshness, a critical logging issue exposing customer data, schema validation enhancements, an 18% cost reduction, decommissioned ETL jobs, and expanded data catalog coverage.",
+      "summary_word_count": 35,
+      "reader": "Yes, the critical logging issue exposing customer data requires urgent attention."
+    },
+    {
+      "instruction": "preserve_all",
+      "run_index": 1,
+      "summary": "The quarterly update highlights a 25% pipeline throughput increase, improved data freshness, reduced analytics costs by 18%, schema validation, expanded data catalog, but notes a critical issue with plaintext logging of customer data.",
+      "summary_word_count": 33,
+      "reader": "Yes, the plaintext logging of customer data is a critical issue that requires urgent attention due to potential security and privacy risks."
+    },
+    {
+      "instruction": "preserve_all",
+      "run_index": 2,
+      "summary": "The quarterly data-platform update shows a 25% pipeline throughput increase, improved data freshness, an 18% cost reduction, schema validation, decommissioned ETL jobs, expanded data catalog, but a logging issue exposing customer data.",
+      "summary_word_count": 32,
+      "reader": "Yes, the logging issue exposing customer data requires urgent attention due to the potential risk of data breaches and privacy violations."
+    }
+  ]
+}

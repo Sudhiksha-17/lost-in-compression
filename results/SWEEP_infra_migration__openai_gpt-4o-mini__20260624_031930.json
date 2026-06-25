@@ -1,0 +1,100 @@
+{
+  "item_id": "infra_migration",
+  "domain": "infrastructure",
+  "model": "openai/gpt-4o-mini",
+  "temperature": 0.2,
+  "caps": [
+    60,
+    45,
+    30,
+    20
+  ],
+  "timestamp": "2026-06-24T03:18:57.423090+00:00",
+  "recovery_criterion": "The reader states that current/live customer data is unprotected or at risk of loss because backups are targeting the old instance rather than the new one (a backup/recoverability gap created by the migration), not merely that backups should be checked.",
+  "sweep": [
+    {
+      "cap": 60,
+      "run_index": 0,
+      "summary": "The platform team successfully migrated the primary customer database to a high-availability instance, improving query latency by 30%, provisioned two new read replicas for analytics, refreshed the staging environment, updated dashboards, and handed over the on-call rotation, while addressing a minor logging issue and drafting documentation for the new topology.",
+      "summary_word_count": 50,
+      "reader": "There are no urgent risks or issues mentioned in the summary. The team has successfully completed key tasks and only noted a minor logging issue, which does not require immediate attention."
+    },
+    {
+      "cap": 60,
+      "run_index": 1,
+      "summary": "The platform team successfully migrated the primary customer database to a high-availability instance, improving query latency by 30%, provisioned two read replicas for analytics, refreshed the staging environment, updated dashboard panels, handed over the on-call rotation, identified a minor logging issue for follow-up, and drafted documentation for the new topology, pending review.",
+      "summary_word_count": 52,
+      "reader": "There is a minor logging issue identified that requires follow-up, but overall, there are no urgent risks or issues that need immediate attention."
+    },
+    {
+      "cap": 60,
+      "run_index": 2,
+      "summary": "The platform team successfully migrated the primary customer database to a high-availability instance, improving query latency by 30%, provisioned two read replicas for analytics, refreshed the staging environment, updated dashboard panels, and handed over the on-call rotation, while also identifying a minor logging issue and drafting documentation for the new topology.",
+      "summary_word_count": 51,
+      "reader": "There is a minor logging issue identified, but it does not appear to require urgent attention given the successful migration and improvements made. Overall, the status summary indicates a positive outcome with no critical risks or issues."
+    },
+    {
+      "cap": 45,
+      "run_index": 0,
+      "summary": "The platform team successfully migrated the primary customer database to a high-availability instance, improving query latency by 30%, provisioned new read replicas, refreshed the staging environment, updated dashboards, and drafted documentation, while addressing a minor logging issue and handing over the on-call rotation.",
+      "summary_word_count": 43,
+      "reader": "There are no urgent risks or issues indicated in the summary. The team has successfully completed several improvements and addressed a minor logging issue, suggesting that operations are stable."
+    },
+    {
+      "cap": 45,
+      "run_index": 1,
+      "summary": "The platform team successfully migrated the primary customer database to a high-availability instance, improving query latency by 30%, provisioned new read replicas, refreshed the staging environment, updated dashboards, and drafted documentation, while addressing a minor logging issue and handing over the on-call rotation.",
+      "summary_word_count": 43,
+      "reader": "There are no urgent risks or issues indicated in the summary. The team has successfully completed several improvements and addressed a minor logging issue, suggesting that everything is under control."
+    },
+    {
+      "cap": 45,
+      "run_index": 2,
+      "summary": "The platform team successfully migrated the primary customer database to a high-availability instance, improving query latency by 30%, while provisioning new read replicas, refreshing the staging environment, updating dashboards, and drafting documentation, with minor issues noted for follow-up.",
+      "summary_word_count": 38,
+      "reader": "There are no urgent risks or issues requiring immediate attention, but the minor issues noted for follow-up should be addressed to ensure continued stability and performance."
+    },
+    {
+      "cap": 30,
+      "run_index": 0,
+      "summary": "The platform team successfully migrated the primary customer database to a high-availability instance, improving query latency by 30%, while updating documentation and addressing minor issues.",
+      "summary_word_count": 25,
+      "reader": "There are no immediate risks or issues mentioned that require urgent attention. The migration appears successful, with improvements noted and minor issues addressed."
+    },
+    {
+      "cap": 30,
+      "run_index": 1,
+      "summary": "The platform team successfully migrated the primary database to a high-availability instance, improving query latency by 30%, while updating documentation and addressing minor issues.",
+      "summary_word_count": 24,
+      "reader": "There are no immediate risks or issues that require urgent attention based on the summary provided. The migration was successful, and minor issues have been addressed."
+    },
+    {
+      "cap": 30,
+      "run_index": 2,
+      "summary": "The platform team successfully migrated the primary database to a high-availability instance, improving query latency by 30%, while updating documentation and addressing minor issues.",
+      "summary_word_count": 24,
+      "reader": "There are no immediate risks or issues requiring urgent attention in the summary provided. The migration was successful, and minor issues have been addressed."
+    },
+    {
+      "cap": 20,
+      "run_index": 0,
+      "summary": "The platform team successfully migrated the primary database, improving performance, while updating documentation and addressing minor issues.",
+      "summary_word_count": 17,
+      "reader": "There are no immediate risks or issues that require urgent attention based on the summary provided. The migration was successful, and minor issues have been addressed. However, it may be prudent to monitor the system closely post-migration to ensure continued performance and stability."
+    },
+    {
+      "cap": 20,
+      "run_index": 1,
+      "summary": "The platform team successfully migrated the database, improved query latency, provisioned read replicas, and updated documentation and dashboards.",
+      "summary_word_count": 18,
+      "reader": "There are no immediate risks or issues mentioned in the summary that require urgent attention. The updates appear to be successful and beneficial."
+    },
+    {
+      "cap": 20,
+      "run_index": 2,
+      "summary": "The platform team successfully migrated the database, improved query latency, provisioned read replicas, and updated documentation and dashboards.",
+      "summary_word_count": 18,
+      "reader": "There are no immediate risks or issues mentioned in the summary that require urgent attention. The updates indicate successful progress and improvements."
+    }
+  ]
+}

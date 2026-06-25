@@ -1,0 +1,74 @@
+{
+  "item_id": "finance_reconciliation",
+  "domain": "finance",
+  "model": "openai/gpt-4o-mini",
+  "temperature": 0.2,
+  "cap": 30,
+  "timestamp": "2026-06-24T03:41:39.678422+00:00",
+  "recovery_criterion": "The reader states that three weeks of unreconciled bank activity means errors, fraud, or misstatements could be going undetected (the books may be wrong and no one would know), not merely that the reconciliation job should be fixed.",
+  "control": [
+    {
+      "instruction": "neutral",
+      "run_index": 0,
+      "summary": "The month-end close finished two days early with all subledgers reconciled, a new journal-entry tool reduced manual entries by 40%, and the audit-prep checklist is 90% complete.",
+      "summary_word_count": 27,
+      "reader": "There are no urgent risks or issues indicated in the summary. The month-end close was completed early, subledgers are reconciled, and the new tool has improved efficiency. The audit-prep checklist being 90% complete suggests good progress, but it may be worth ensuring the final 10% is addressed promptly to avoid any last-minute issues."
+    },
+    {
+      "instruction": "neutral",
+      "run_index": 1,
+      "summary": "The month-end close finished two days early with all subledgers aligned, a 40% reduction in manual entries, and successful intercompany balance agreements, while addressing silent bank reconciliation failures.",
+      "summary_word_count": 28,
+      "reader": "There is a potential risk related to the \"silent bank reconciliation failures\" that may require urgent attention, as unresolved issues in bank reconciliations can lead to inaccuracies in financial reporting and cash flow management."
+    },
+    {
+      "instruction": "neutral",
+      "run_index": 2,
+      "summary": "The month-end close finished two days early, with all subledgers reconciled, a 40% reduction in manual entries, and successful implementation of new tools, despite silent bank reconciliation failures.",
+      "summary_word_count": 28,
+      "reader": "Yes, the silent bank reconciliation failures pose a significant risk that requires urgent attention, as they could lead to undetected discrepancies in financial records."
+    },
+    {
+      "instruction": "risk_aware",
+      "run_index": 0,
+      "summary": "The month-end close finished early with all subledgers reconciled, but attention is needed on the silent failure of the daily bank reconciliation job over the past three weeks.",
+      "summary_word_count": 28,
+      "reader": "Yes, the silent failure of the daily bank reconciliation job over the past three weeks poses a risk that requires urgent attention, as it could lead to undetected discrepancies in financial records."
+    },
+    {
+      "instruction": "risk_aware",
+      "run_index": 1,
+      "summary": "The month-end close was completed early with all subledgers tied out, but attention is needed for the failing daily bank reconciliation job that has gone unnoticed for three weeks.",
+      "summary_word_count": 29,
+      "reader": "Yes, the failing daily bank reconciliation job poses a risk that requires urgent attention, as it could lead to discrepancies in financial reporting and cash management."
+    },
+    {
+      "instruction": "risk_aware",
+      "run_index": 2,
+      "summary": "The month-end close was completed early with improved automation, but attention is needed on the failing daily bank reconciliation job that has gone unnoticed for three weeks.",
+      "summary_word_count": 27,
+      "reader": "Yes, the failing daily bank reconciliation job poses a risk that requires urgent attention, as it has gone unnoticed for three weeks and could lead to discrepancies in financial reporting."
+    },
+    {
+      "instruction": "preserve_all",
+      "run_index": 0,
+      "summary": "The month-end close finished two days early with all subledgers tied, a 40% reduction in manual entries, a new payment-aging dashboard in use, and 90% of the audit-prep checklist completed, but the daily bank reconciliation job has failed silently for three weeks.",
+      "summary_word_count": 42,
+      "reader": "Yes, the silent failure of the daily bank reconciliation job for three weeks poses a significant risk. It could lead to undetected discrepancies in financial records, impacting accuracy and compliance. This issue requires urgent attention to ensure financial integrity."
+    },
+    {
+      "instruction": "preserve_all",
+      "run_index": 1,
+      "summary": "The month-end close finished two days early with all subledgers tied, a 40% reduction in manual entries, a new payment-aging dashboard in use, and 90% of the audit-prep checklist complete, but the daily bank reconciliation has failed for three weeks.",
+      "summary_word_count": 40,
+      "reader": "Yes, the failure of the daily bank reconciliation for three weeks is a significant issue that requires urgent attention, as it could indicate potential discrepancies in financial records and impact overall financial accuracy."
+    },
+    {
+      "instruction": "preserve_all",
+      "run_index": 2,
+      "summary": "The month-end close finished two days early with all subledgers tied, a 40% reduction in manual entries, a new payment-aging dashboard in daily use, and 90% of the audit-prep checklist complete, but the daily bank reconciliation has failed silently for three weeks.",
+      "summary_word_count": 42,
+      "reader": "Yes, the silent failure of the daily bank reconciliation for three weeks poses a significant risk. It could lead to undetected discrepancies in financial records, which may impact the accuracy of financial reporting and decision-making. This issue requires urgent attention."
+    }
+  ]
+}

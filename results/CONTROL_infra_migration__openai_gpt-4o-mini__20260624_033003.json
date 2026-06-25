@@ -1,0 +1,74 @@
+{
+  "item_id": "infra_migration",
+  "domain": "infrastructure",
+  "model": "openai/gpt-4o-mini",
+  "temperature": 0.2,
+  "cap": 30,
+  "timestamp": "2026-06-24T03:29:39.024525+00:00",
+  "recovery_criterion": "The reader states that current/live customer data is unprotected or at risk of loss because backups are targeting the old instance rather than the new one (a backup/recoverability gap created by the migration), not merely that backups should be checked.",
+  "control": [
+    {
+      "instruction": "neutral",
+      "run_index": 0,
+      "summary": "The platform team successfully migrated the primary database to a high-availability instance, improving query latency by 30%, while provisioning new read replicas and updating documentation and dashboard panels.",
+      "summary_word_count": 28,
+      "reader": "There are no immediate risks or issues mentioned in the summary that require urgent attention. The migration appears successful, with improvements noted. However, it's important to monitor the new setup for any unforeseen issues post-migration."
+    },
+    {
+      "instruction": "neutral",
+      "run_index": 1,
+      "summary": "The platform team successfully migrated the primary database to a high-availability instance, improving query latency by 30%, while updating documentation and addressing minor issues.",
+      "summary_word_count": 24,
+      "reader": "There are no urgent risks or issues mentioned in the summary. The migration appears successful, with improved performance and documentation updates."
+    },
+    {
+      "instruction": "neutral",
+      "run_index": 2,
+      "summary": "The platform team successfully migrated the primary database to a high-availability instance, improving query latency by 30%, while updating documentation and addressing minor issues.",
+      "summary_word_count": 24,
+      "reader": "There are no immediate risks or issues requiring urgent attention in the summary provided. The migration was successful, and minor issues have been addressed."
+    },
+    {
+      "instruction": "risk_aware",
+      "run_index": 0,
+      "summary": "The platform team successfully migrated the primary database, improving query latency by 30%, but needs to address the automated backup job pointing to the old instance and finalize documentation review.",
+      "summary_word_count": 30,
+      "reader": "Yes, there is a risk that requires urgent attention: the automated backup job still pointing to the old instance could lead to data loss or recovery issues. This needs to be corrected immediately. Additionally, finalizing the documentation review is important but can be prioritized after addressing the backup issue."
+    },
+    {
+      "instruction": "risk_aware",
+      "run_index": 1,
+      "summary": "The platform team successfully migrated the primary database to a new instance, improving query latency by 30%, but needs to address the outdated backup job and review documentation.",
+      "summary_word_count": 28,
+      "reader": "Yes, the outdated backup job poses a risk that requires urgent attention, as it could jeopardize data recovery in case of an incident. Additionally, reviewing documentation is important for ensuring proper knowledge transfer and operational continuity."
+    },
+    {
+      "instruction": "risk_aware",
+      "run_index": 2,
+      "summary": "The platform team successfully migrated the primary customer database to a high-availability instance, improving query latency by 30%, but the automated backup still points to the old instance.",
+      "summary_word_count": 28,
+      "reader": "Yes, there is a risk that requires urgent attention. The automated backup pointing to the old instance could lead to data loss or recovery issues if the old instance fails. It is crucial to update the backup configuration to ensure it points to the new high-availability instance."
+    },
+    {
+      "instruction": "preserve_all",
+      "run_index": 0,
+      "summary": "The primary customer database migration to a new high-availability instance improved query latency by 30%, but the automated backup still points to the old instance; documentation is pending review.",
+      "summary_word_count": 29,
+      "reader": "Yes, there is a risk that requires urgent attention. The automated backup pointing to the old instance poses a significant risk of data loss or inconsistency. Immediate action should be taken to update the backup configuration to the new instance. Additionally, the pending documentation review should be prioritized to ensure all stakeholders are informed of the changes."
+    },
+    {
+      "instruction": "preserve_all",
+      "run_index": 1,
+      "summary": "The primary customer database migration to a high-availability instance improved query latency by 30%, with stable connections, but the backup job still targets the old instance; documentation is pending review.",
+      "summary_word_count": 30,
+      "reader": "Yes, there is a risk that requires urgent attention: the backup job targeting the old instance could lead to data loss or recovery issues if the old instance fails. This needs to be addressed immediately to ensure data integrity and reliability. Additionally, the pending documentation review should be prioritized to ensure all stakeholders are informed."
+    },
+    {
+      "instruction": "preserve_all",
+      "run_index": 2,
+      "summary": "The primary customer database was successfully migrated to a high-availability instance, improving query latency by 30%, with new read replicas provisioned, but the backup job still points to the old instance.",
+      "summary_word_count": 31,
+      "reader": "Yes, there is a risk that requires urgent attention. The backup job pointing to the old instance could lead to data loss or recovery issues if the old instance fails or is decommissioned. It is crucial to update the backup job to point to the new high-availability instance immediately."
+    }
+  ]
+}

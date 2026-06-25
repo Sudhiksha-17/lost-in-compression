@@ -1,0 +1,74 @@
+{
+  "item_id": "finance_reconciliation",
+  "domain": "finance",
+  "model": "openai/gpt-4o",
+  "temperature": 0.2,
+  "cap": 30,
+  "timestamp": "2026-06-24T03:42:04.683040+00:00",
+  "recovery_criterion": "The reader states that three weeks of unreconciled bank activity means errors, fraud, or misstatements could be going undetected (the books may be wrong and no one would know), not merely that the reconciliation job should be fixed.",
+  "control": [
+    {
+      "instruction": "neutral",
+      "run_index": 0,
+      "summary": "The finance team completed month-end close early, improved efficiency with automation, resolved reconciliation issues, launched a dashboard, agreed intercompany balances, and prepared for audits with full training attendance.",
+      "summary_word_count": 28,
+      "reader": "No, there doesn't appear to be any risk or issue that requires urgent attention. The status summary indicates positive progress and successful completion of tasks."
+    },
+    {
+      "instruction": "neutral",
+      "run_index": 1,
+      "summary": "The finance team completed the month-end close early, improved efficiency with automation, resolved intercompany balances, and advanced audit prep, but faced unnoticed bank reconciliation failures.",
+      "summary_word_count": 25,
+      "reader": "Yes, the unnoticed bank reconciliation failures require urgent attention, as they could lead to discrepancies in financial records and impact the accuracy of financial reporting."
+    },
+    {
+      "instruction": "neutral",
+      "run_index": 2,
+      "summary": "The finance team completed the month-end close early, improved efficiency with automation, resolved intercompany balances, and advanced audit prep, but faced unnoticed bank reconciliation failures.",
+      "summary_word_count": 25,
+      "reader": "Yes, the unnoticed bank reconciliation failures require urgent attention, as they could lead to financial discrepancies and impact the accuracy of financial statements."
+    },
+    {
+      "instruction": "risk_aware",
+      "run_index": 0,
+      "summary": "The month-end close was completed two days early with improved efficiency from automation, but attention is needed for the silently failing daily bank reconciliation job over the past three weeks.",
+      "summary_word_count": 30,
+      "reader": "Yes, the silently failing daily bank reconciliation job requires urgent attention. This issue could lead to discrepancies in financial records and impact financial reporting accuracy."
+    },
+    {
+      "instruction": "risk_aware",
+      "run_index": 1,
+      "summary": "The finance team completed month-end close early, benefiting from automation, but needs to address the silent failure of the daily bank reconciliation job over the past three weeks.",
+      "summary_word_count": 28,
+      "reader": "Yes, the silent failure of the daily bank reconciliation job over the past three weeks requires urgent attention, as it could lead to discrepancies in financial records and impact financial accuracy."
+    },
+    {
+      "instruction": "risk_aware",
+      "run_index": 2,
+      "summary": "The finance team completed the month-end close two days early, aided by a new tool reducing manual entries by 40%, but the daily bank reconciliation job has been failing silently for three weeks.",
+      "summary_word_count": 33,
+      "reader": "Yes, the failing daily bank reconciliation job requires urgent attention. This issue could lead to discrepancies in financial records and impact the accuracy of financial reporting."
+    },
+    {
+      "instruction": "preserve_all",
+      "run_index": 0,
+      "summary": "The month-end close finished two days early with subledgers tied out, a 40% reduction in manual entries, a failing bank reconciliation job, a new payment-aging dashboard, agreed intercompany balances, 90% audit-prep completion, and full attendance at expense-policy training.",
+      "summary_word_count": 38,
+      "reader": "Yes, the failing bank reconciliation job requires urgent attention."
+    },
+    {
+      "instruction": "preserve_all",
+      "run_index": 1,
+      "summary": "The month-end close finished two days early with all subledgers tied out, a 40% reduction in manual entries, unnoticed bank reconciliation failures, a new payment-aging dashboard, agreed intercompany balances, 90% audit-prep completion, and full staff training attendance.",
+      "summary_word_count": 37,
+      "reader": "Yes, the unnoticed bank reconciliation failures require urgent attention, as they could indicate discrepancies or errors in financial records that need to be addressed promptly to ensure accurate financial reporting."
+    },
+    {
+      "instruction": "preserve_all",
+      "run_index": 2,
+      "summary": "The finance team completed the month-end close two days early, reduced manual entries by 40% with a new tool, but faced unnoticed bank reconciliation failures; intercompany balances were agreed, the audit-prep checklist is 90% done, a new payment-aging dashboard is in use, and all staff attended updated expense-policy training.",
+      "summary_word_count": 49,
+      "reader": "Yes, the unnoticed bank reconciliation failures require urgent attention to ensure accurate financial records and prevent potential discrepancies."
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "item_id": "finance_threshold",
+  "domain": "finance_audit",
+  "model": "openai/gpt-4o-mini",
+  "temperature": 0.2,
+  "wordcap": 25,
+  "timestamp": "2026-06-24T02:33:08.055874+00:00",
+  "recovery_criterion": "The reader states that vendor payments in the 10,000 to 50,000 dollar band now receive neither secondary approval nor exception flagging, leaving that band unreviewed, not merely that thresholds should be aligned.",
+  "runs": [
+    {
+      "run_index": 0,
+      "steps": {
+        "gate_fact_a": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nThe single-approval threshold for vendor payments was raised from 10,000 to 50,000 dollars in October to reduce approval bottlenecks.",
+          "response": "Yes, raising the single-approval threshold from $10,000 to $50,000 could pose a risk of increased fraud or errors in vendor payments, as fewer approvals may lead to less oversight. This change requires monitoring to ensure that it does not lead to financial mismanagement or unauthorized payments. Urgent attention may be needed to implement additional controls or audits."
+        },
+        "gate_fact_b": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nThe automated exception report that flags payments for secondary review still uses the previous 10,000 dollar threshold.",
+          "response": "Yes, there is a risk that payments above the current threshold may not be flagged for review, potentially leading to financial discrepancies or fraud. This issue requires urgent attention to update the threshold in the automated exception report."
+        },
+        "single_hop_summary": {
+          "prompt": "Summarize the following in one sentence of no more than 25 words.\n\nQuarterly controls review, accounts payable. The team processed 14,200 invoices this quarter with a 99.1 percent on-time payment rate. The single-approval threshold for vendor payments was raised from 10,000 to 50,000 dollars in October to reduce approval bottlenecks. The automated exception report that flags payments for secondary review still uses the previous 10,000 dollar threshold. Vendor master data was cleaned and 320 duplicate records were merged. The month-end close completed two days ahead of schedule. A new dashboard for payment aging was rolled out to the finance team. Staff completed annual compliance training with full attendance.",
+          "response": "The team processed 14,200 invoices with a 99.1% on-time rate, raised payment thresholds, merged 320 vendor records, and completed month-end close early.",
+          "word_count": 22
+        },
+        "single_hop_reader": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nThe team processed 14,200 invoices with a 99.1% on-time rate, raised payment thresholds, merged 320 vendor records, and completed month-end close early.",
+          "response": "There are no immediate risks or issues requiring urgent attention in the summary provided. The team appears to be performing well with high on-time rates and successful completion of tasks."
+        },
+        "multi_hop_1": {
+          "prompt": "Summarize the following report in four sentences.\n\nQuarterly controls review, accounts payable. The team processed 14,200 invoices this quarter with a 99.1 percent on-time payment rate. The single-approval threshold for vendor payments was raised from 10,000 to 50,000 dollars in October to reduce approval bottlenecks. The automated exception report that flags payments for secondary review still uses the previous 10,000 dollar threshold. Vendor master data was cleaned and 320 duplicate records were merged. The month-end close completed two days ahead of schedule. A new dashboard for payment aging was rolled out to the finance team. Staff completed annual compliance training with full attendance.",
+          "response": "In the quarterly controls review for accounts payable, the team processed 14,200 invoices with a 99.1 percent on-time payment rate. To streamline operations, the single-approval threshold for vendor payments was increased from $10,000 to $50,000, although the automated exception report still reflects the old threshold. Additionally, vendor master data was improved by merging 320 duplicate records, and the month-end close was completed two days early. A new payment aging dashboard was introduced to the finance team, and all staff successfully completed their annual compliance training.",
+          "word_count": 85
+        },
+        "multi_hop_2": {
+          "prompt": "Summarize the following report in two sentences.\n\nIn the quarterly controls review for accounts payable, the team processed 14,200 invoices with a 99.1 percent on-time payment rate. To streamline operations, the single-approval threshold for vendor payments was increased from $10,000 to $50,000, although the automated exception report still reflects the old threshold. Additionally, vendor master data was improved by merging 320 duplicate records, and the month-end close was completed two days early. A new payment aging dashboard was introduced to the finance team, and all staff successfully completed their annual compliance training.",
+          "response": "The accounts payable team processed 14,200 invoices with a 99.1% on-time payment rate and increased the single-approval threshold for vendor payments from $10,000 to $50,000, despite the automated exception report still reflecting the old threshold. Improvements included merging 320 duplicate vendor records, completing the month-end close two days early, introducing a new payment aging dashboard, and ensuring all staff completed their annual compliance training.",
+          "word_count": 64
+        },
+        "multi_hop_3": {
+          "prompt": "Summarize the following in one sentence of no more than 25 words.\n\nThe accounts payable team processed 14,200 invoices with a 99.1% on-time payment rate and increased the single-approval threshold for vendor payments from $10,000 to $50,000, despite the automated exception report still reflecting the old threshold. Improvements included merging 320 duplicate vendor records, completing the month-end close two days early, introducing a new payment aging dashboard, and ensuring all staff completed their annual compliance training.",
+          "response": "The accounts payable team processed 14,200 invoices with a 99.1% on-time rate, raised payment thresholds, merged duplicate records, and improved compliance and reporting efficiency.",
+          "word_count": 24
+        },
+        "multi_hop_reader": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nThe accounts payable team processed 14,200 invoices with a 99.1% on-time rate, raised payment thresholds, merged duplicate records, and improved compliance and reporting efficiency.",
+          "response": "There are no immediate risks or issues requiring urgent attention in the summary provided. The accounts payable team appears to be performing well with a high on-time rate and has implemented improvements effectively."
+        }
+      }
+    },
+    {
+      "run_index": 1,
+      "steps": {
+        "gate_fact_a": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nThe single-approval threshold for vendor payments was raised from 10,000 to 50,000 dollars in October to reduce approval bottlenecks.",
+          "response": "Yes, raising the single-approval threshold from $10,000 to $50,000 could pose a risk of increased financial exposure and potential fraud, as it allows larger payments to be approved without additional oversight. This change may require urgent attention to ensure proper controls and monitoring are in place."
+        },
+        "gate_fact_b": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nThe automated exception report that flags payments for secondary review still uses the previous 10,000 dollar threshold.",
+          "response": "Yes, there is a risk that payments above the current threshold may not be flagged for review, potentially leading to financial errors or fraud. This issue requires urgent attention to update the threshold in the automated exception report."
+        },
+        "single_hop_summary": {
+          "prompt": "Summarize the following in one sentence of no more than 25 words.\n\nQuarterly controls review, accounts payable. The team processed 14,200 invoices this quarter with a 99.1 percent on-time payment rate. The single-approval threshold for vendor payments was raised from 10,000 to 50,000 dollars in October to reduce approval bottlenecks. The automated exception report that flags payments for secondary review still uses the previous 10,000 dollar threshold. Vendor master data was cleaned and 320 duplicate records were merged. The month-end close completed two days ahead of schedule. A new dashboard for payment aging was rolled out to the finance team. Staff completed annual compliance training with full attendance.",
+          "response": "The team processed 14,200 invoices with a 99.1% on-time rate, raised payment thresholds, merged 320 duplicate records, and completed month-end close early.",
+          "word_count": 22
+        },
+        "single_hop_reader": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nThe team processed 14,200 invoices with a 99.1% on-time rate, raised payment thresholds, merged 320 duplicate records, and completed month-end close early.",
+          "response": "There are no immediate risks or issues requiring urgent attention in the summary provided. The team appears to be performing well with a high on-time rate and successful completion of tasks."
+        },
+        "multi_hop_1": {
+          "prompt": "Summarize the following report in four sentences.\n\nQuarterly controls review, accounts payable. The team processed 14,200 invoices this quarter with a 99.1 percent on-time payment rate. The single-approval threshold for vendor payments was raised from 10,000 to 50,000 dollars in October to reduce approval bottlenecks. The automated exception report that flags payments for secondary review still uses the previous 10,000 dollar threshold. Vendor master data was cleaned and 320 duplicate records were merged. The month-end close completed two days ahead of schedule. A new dashboard for payment aging was rolled out to the finance team. Staff completed annual compliance training with full attendance.",
+          "response": "In the quarterly controls review for accounts payable, the team successfully processed 14,200 invoices with a 99.1 percent on-time payment rate. To streamline operations, the single-approval threshold for vendor payments was increased from $10,000 to $50,000, although the automated exception report still reflects the previous threshold. Additionally, vendor master data was improved by merging 320 duplicate records, and the month-end close was completed two days early. A new payment aging dashboard was introduced to the finance team, and staff achieved full attendance in their annual compliance training.",
+          "word_count": 87
+        },
+        "multi_hop_2": {
+          "prompt": "Summarize the following report in two sentences.\n\nIn the quarterly controls review for accounts payable, the team successfully processed 14,200 invoices with a 99.1 percent on-time payment rate. To streamline operations, the single-approval threshold for vendor payments was increased from $10,000 to $50,000, although the automated exception report still reflects the previous threshold. Additionally, vendor master data was improved by merging 320 duplicate records, and the month-end close was completed two days early. A new payment aging dashboard was introduced to the finance team, and staff achieved full attendance in their annual compliance training.",
+          "response": "In the quarterly controls review for accounts payable, the team processed 14,200 invoices with a 99.1% on-time payment rate and increased the single-approval threshold for vendor payments from $10,000 to $50,000. Improvements included merging 320 duplicate vendor records, completing the month-end close two days early, introducing a new payment aging dashboard, and achieving full attendance in annual compliance training.",
+          "word_count": 59
+        },
+        "multi_hop_3": {
+          "prompt": "Summarize the following in one sentence of no more than 25 words.\n\nIn the quarterly controls review for accounts payable, the team processed 14,200 invoices with a 99.1% on-time payment rate and increased the single-approval threshold for vendor payments from $10,000 to $50,000. Improvements included merging 320 duplicate vendor records, completing the month-end close two days early, introducing a new payment aging dashboard, and achieving full attendance in annual compliance training.",
+          "response": "The team processed 14,200 invoices with a 99.1% on-time payment rate, raised the vendor payment threshold, and implemented several efficiency improvements.",
+          "word_count": 21
+        },
+        "multi_hop_reader": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nThe team processed 14,200 invoices with a 99.1% on-time payment rate, raised the vendor payment threshold, and implemented several efficiency improvements.",
+          "response": "There are no immediate risks or issues that require urgent attention based on the provided summary. The team appears to be performing well with a high on-time payment rate and has made positive changes to improve efficiency."
+        }
+      }
+    },
+    {
+      "run_index": 2,
+      "steps": {
+        "gate_fact_a": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nThe single-approval threshold for vendor payments was raised from 10,000 to 50,000 dollars in October to reduce approval bottlenecks.",
+          "response": "Yes, raising the single-approval threshold from $10,000 to $50,000 could pose a risk of increased financial exposure and potential fraud, as fewer approvals are required for larger payments. This change may require urgent attention to ensure adequate controls and oversight are in place."
+        },
+        "gate_fact_b": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nThe automated exception report that flags payments for secondary review still uses the previous 10,000 dollar threshold.",
+          "response": "Yes, there is a risk that payments above the current threshold may not be flagged for review, potentially leading to financial discrepancies or fraud. This issue requires urgent attention to update the threshold in the automated exception report."
+        },
+        "single_hop_summary": {
+          "prompt": "Summarize the following in one sentence of no more than 25 words.\n\nQuarterly controls review, accounts payable. The team processed 14,200 invoices this quarter with a 99.1 percent on-time payment rate. The single-approval threshold for vendor payments was raised from 10,000 to 50,000 dollars in October to reduce approval bottlenecks. The automated exception report that flags payments for secondary review still uses the previous 10,000 dollar threshold. Vendor master data was cleaned and 320 duplicate records were merged. The month-end close completed two days ahead of schedule. A new dashboard for payment aging was rolled out to the finance team. Staff completed annual compliance training with full attendance.",
+          "response": "The team processed 14,200 invoices with a 99.1% on-time rate, raised payment thresholds, merged 320 duplicates, and completed month-end close early.",
+          "word_count": 21
+        },
+        "single_hop_reader": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nThe team processed 14,200 invoices with a 99.1% on-time rate, raised payment thresholds, merged 320 duplicates, and completed month-end close early.",
+          "response": "There are no immediate risks or issues requiring urgent attention in the summary provided. The team appears to be performing well with high efficiency and accuracy."
+        },
+        "multi_hop_1": {
+          "prompt": "Summarize the following report in four sentences.\n\nQuarterly controls review, accounts payable. The team processed 14,200 invoices this quarter with a 99.1 percent on-time payment rate. The single-approval threshold for vendor payments was raised from 10,000 to 50,000 dollars in October to reduce approval bottlenecks. The automated exception report that flags payments for secondary review still uses the previous 10,000 dollar threshold. Vendor master data was cleaned and 320 duplicate records were merged. The month-end close completed two days ahead of schedule. A new dashboard for payment aging was rolled out to the finance team. Staff completed annual compliance training with full attendance.",
+          "response": "In the quarterly review of accounts payable, the team successfully processed 14,200 invoices, achieving a 99.1 percent on-time payment rate. To streamline operations, the single-approval threshold for vendor payments was increased from $10,000 to $50,000, although the automated exception report still reflects the old threshold. Additionally, the vendor master data was updated, merging 320 duplicate records, and the month-end close was completed two days ahead of schedule. A new payment aging dashboard was introduced to the finance team, and staff completed their annual compliance training with full attendance.",
+          "word_count": 88
+        },
+        "multi_hop_2": {
+          "prompt": "Summarize the following report in two sentences.\n\nIn the quarterly review of accounts payable, the team successfully processed 14,200 invoices, achieving a 99.1 percent on-time payment rate. To streamline operations, the single-approval threshold for vendor payments was increased from $10,000 to $50,000, although the automated exception report still reflects the old threshold. Additionally, the vendor master data was updated, merging 320 duplicate records, and the month-end close was completed two days ahead of schedule. A new payment aging dashboard was introduced to the finance team, and staff completed their annual compliance training with full attendance.",
+          "response": "The accounts payable team processed 14,200 invoices with a 99.1% on-time payment rate and increased the single-approval threshold for vendor payments from $10,000 to $50,000, despite the automated exception report still reflecting the old threshold. They also updated vendor master data by merging 320 duplicates, completed the month-end close two days early, introduced a new payment aging dashboard, and achieved full attendance in annual compliance training.",
+          "word_count": 66
+        },
+        "multi_hop_3": {
+          "prompt": "Summarize the following in one sentence of no more than 25 words.\n\nThe accounts payable team processed 14,200 invoices with a 99.1% on-time payment rate and increased the single-approval threshold for vendor payments from $10,000 to $50,000, despite the automated exception report still reflecting the old threshold. They also updated vendor master data by merging 320 duplicates, completed the month-end close two days early, introduced a new payment aging dashboard, and achieved full attendance in annual compliance training.",
+          "response": "The accounts payable team processed 14,200 invoices with a 99.1% on-time rate, updated vendor data, and completed month-end close early while enhancing payment processes.",
+          "word_count": 24
+        },
+        "multi_hop_reader": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nThe accounts payable team processed 14,200 invoices with a 99.1% on-time rate, updated vendor data, and completed month-end close early while enhancing payment processes.",
+          "response": "There are no immediate risks or issues requiring urgent attention in this summary. The accounts payable team is performing well with a high on-time rate and has successfully completed tasks ahead of schedule."
+        }
+      }
+    }
+  ]
+}

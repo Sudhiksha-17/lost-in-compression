@@ -1,0 +1,8 @@
+{
+  "id": "security_offboarding",
+  "domain": "security",
+  "source": "Monthly security review for the infrastructure team. The quarterly access audit was completed on schedule, covering all 240 production accounts. Multi-factor authentication enrollment reached 100 percent across engineering after the final reminders went out. During the audit it was noted that a departed senior engineer's administrator credentials remain active and have not yet been revoked. Single sign-on was extended to three additional internal tools this cycle. The security awareness training completion rate rose to 96 percent. A new secrets-scanning hook was added to the CI pipeline and is catching hardcoded keys before merge. The incident response runbook was reviewed and updated with the new on-call contacts.",
+  "embedded_fact": "A departed senior engineer's administrator credentials remain active and have not yet been revoked.",
+  "recovery_criterion": "The reader states that an active set of admin credentials belonging to someone who has left the organization is a live security exposure (unauthorized access / insider or account-compromise risk) that must be revoked, not merely that access should be reviewed.",
+  "notes": "Embedded-risk recipe."
+}

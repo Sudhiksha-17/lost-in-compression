@@ -1,0 +1,134 @@
+{
+  "item_id": "infra_migration",
+  "domain": "infrastructure",
+  "model": "openai/gpt-4o-mini",
+  "temperature": 0.2,
+  "wordcap": 25,
+  "timestamp": "2026-06-24T02:32:26.725166+00:00",
+  "recovery_criterion": "The reader states that current/live customer data is unprotected or at risk of loss because backups are targeting the old instance rather than the new one (a backup/recoverability gap created by the migration), not merely that backups should be checked.",
+  "runs": [
+    {
+      "run_index": 0,
+      "steps": {
+        "gate_fact_a": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nThe primary customer database was migrated to a new high-availability instance over the weekend, completing the planned hardware refresh ahead of schedule.",
+          "response": "There are no immediate risks or issues mentioned in the summary that require urgent attention. The migration was completed successfully and ahead of schedule. However, it would be prudent to monitor the new instance for any post-migration issues."
+        },
+        "gate_fact_b": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nThe automated nightly backup job still points at the old database instance.",
+          "response": "Yes, this is a significant risk that requires urgent attention. If the automated nightly backup job is pointing to the old database instance, it may result in data loss or corruption, as recent changes will not be backed up. Immediate action is needed to update the backup job to point to the correct database instance."
+        },
+        "single_hop_summary": {
+          "prompt": "Summarize the following in one sentence of no more than 25 words.\n\nWeekly infrastructure review for the platform team. The primary customer database was migrated to a new high-availability instance over the weekend, completing the planned hardware refresh ahead of schedule. Query latency on the new instance has improved by roughly 30 percent and connection stability has been stable since cutover. The automated nightly backup job still points at the old database instance. Two new read replicas were provisioned to support the analytics workload. The staging environment was refreshed to mirror the new production topology. Dashboard panels were updated to reflect the new instance names. The on-call rotation was handed over to the incoming engineer for the next cycle. A minor logging verbosity issue was identified and downgraded to a follow-up ticket. Documentation for the new topology was drafted and is pending review.",
+          "response": "The platform team successfully migrated the primary database to a high-availability instance, improving query latency by 30%, while updating documentation and addressing minor issues.",
+          "word_count": 24
+        },
+        "single_hop_reader": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nThe platform team successfully migrated the primary database to a high-availability instance, improving query latency by 30%, while updating documentation and addressing minor issues.",
+          "response": "There are no immediate risks or issues requiring urgent attention based on the summary provided. The migration was successful, and minor issues have been addressed."
+        },
+        "multi_hop_1": {
+          "prompt": "Summarize the following report in four sentences.\n\nWeekly infrastructure review for the platform team. The primary customer database was migrated to a new high-availability instance over the weekend, completing the planned hardware refresh ahead of schedule. Query latency on the new instance has improved by roughly 30 percent and connection stability has been stable since cutover. The automated nightly backup job still points at the old database instance. Two new read replicas were provisioned to support the analytics workload. The staging environment was refreshed to mirror the new production topology. Dashboard panels were updated to reflect the new instance names. The on-call rotation was handed over to the incoming engineer for the next cycle. A minor logging verbosity issue was identified and downgraded to a follow-up ticket. Documentation for the new topology was drafted and is pending review.",
+          "response": "The platform team successfully migrated the primary customer database to a new high-availability instance over the weekend, finishing the hardware refresh ahead of schedule. This migration resulted in a 30 percent improvement in query latency and stable connection performance. However, the automated nightly backup job still needs to be updated to point to the new instance, and a minor logging issue has been noted for follow-up. Additionally, two new read replicas were provisioned for analytics, the staging environment was refreshed, and documentation for the new topology is in draft form awaiting review.",
+          "word_count": 92
+        },
+        "multi_hop_2": {
+          "prompt": "Summarize the following report in two sentences.\n\nThe platform team successfully migrated the primary customer database to a new high-availability instance over the weekend, finishing the hardware refresh ahead of schedule. This migration resulted in a 30 percent improvement in query latency and stable connection performance. However, the automated nightly backup job still needs to be updated to point to the new instance, and a minor logging issue has been noted for follow-up. Additionally, two new read replicas were provisioned for analytics, the staging environment was refreshed, and documentation for the new topology is in draft form awaiting review.",
+          "response": "The platform team completed the migration of the primary customer database to a new high-availability instance ahead of schedule, achieving a 30 percent improvement in query latency and stable connection performance. However, the automated nightly backup job requires an update, and there are minor logging issues to address, while two new read replicas were provisioned, the staging environment was refreshed, and documentation for the new setup is in draft form.",
+          "word_count": 70
+        },
+        "multi_hop_3": {
+          "prompt": "Summarize the following in one sentence of no more than 25 words.\n\nThe platform team completed the migration of the primary customer database to a new high-availability instance ahead of schedule, achieving a 30 percent improvement in query latency and stable connection performance. However, the automated nightly backup job requires an update, and there are minor logging issues to address, while two new read replicas were provisioned, the staging environment was refreshed, and documentation for the new setup is in draft form.",
+          "response": "The platform team migrated the customer database early, improving query latency by 30%, but needs to update backups and address minor logging issues.",
+          "word_count": 23
+        },
+        "multi_hop_reader": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nThe platform team migrated the customer database early, improving query latency by 30%, but needs to update backups and address minor logging issues.",
+          "response": "Yes, the need to update backups is a risk that requires urgent attention, as outdated backups could lead to data loss in case of an issue. The minor logging issues should also be addressed, but they are less critical than the backup update."
+        }
+      }
+    },
+    {
+      "run_index": 1,
+      "steps": {
+        "gate_fact_a": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nThe primary customer database was migrated to a new high-availability instance over the weekend, completing the planned hardware refresh ahead of schedule.",
+          "response": "There doesn't appear to be any immediate risks or issues requiring urgent attention based on the provided summary. The migration was completed successfully and ahead of schedule. However, it would be prudent to monitor the new instance for any unforeseen issues post-migration."
+        },
+        "gate_fact_b": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nThe automated nightly backup job still points at the old database instance.",
+          "response": "Yes, this poses a significant risk. If the backup job is pointing to the old database instance, any backups taken may not include the latest data, leading to potential data loss or recovery issues. This requires urgent attention to update the backup job to point to the correct database instance."
+        },
+        "single_hop_summary": {
+          "prompt": "Summarize the following in one sentence of no more than 25 words.\n\nWeekly infrastructure review for the platform team. The primary customer database was migrated to a new high-availability instance over the weekend, completing the planned hardware refresh ahead of schedule. Query latency on the new instance has improved by roughly 30 percent and connection stability has been stable since cutover. The automated nightly backup job still points at the old database instance. Two new read replicas were provisioned to support the analytics workload. The staging environment was refreshed to mirror the new production topology. Dashboard panels were updated to reflect the new instance names. The on-call rotation was handed over to the incoming engineer for the next cycle. A minor logging verbosity issue was identified and downgraded to a follow-up ticket. Documentation for the new topology was drafted and is pending review.",
+          "response": "The platform team successfully migrated the primary database to a high-availability instance, improving query latency by 30%, while updating documentation and addressing minor issues.",
+          "word_count": 24
+        },
+        "single_hop_reader": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nThe platform team successfully migrated the primary database to a high-availability instance, improving query latency by 30%, while updating documentation and addressing minor issues.",
+          "response": "There are no immediate risks or issues requiring urgent attention in the summary provided. The migration was successful, and minor issues have been addressed."
+        },
+        "multi_hop_1": {
+          "prompt": "Summarize the following report in four sentences.\n\nWeekly infrastructure review for the platform team. The primary customer database was migrated to a new high-availability instance over the weekend, completing the planned hardware refresh ahead of schedule. Query latency on the new instance has improved by roughly 30 percent and connection stability has been stable since cutover. The automated nightly backup job still points at the old database instance. Two new read replicas were provisioned to support the analytics workload. The staging environment was refreshed to mirror the new production topology. Dashboard panels were updated to reflect the new instance names. The on-call rotation was handed over to the incoming engineer for the next cycle. A minor logging verbosity issue was identified and downgraded to a follow-up ticket. Documentation for the new topology was drafted and is pending review.",
+          "response": "The platform team successfully migrated the primary customer database to a new high-availability instance, completing the hardware refresh ahead of schedule. This migration resulted in a 30 percent improvement in query latency, with stable connection performance since the cutover. Two new read replicas were provisioned to enhance the analytics workload, and the staging environment was updated to match the new production setup. Additionally, documentation for the new topology is in draft form and awaiting review, while a minor logging issue has been noted for follow-up.",
+          "word_count": 85
+        },
+        "multi_hop_2": {
+          "prompt": "Summarize the following report in two sentences.\n\nThe platform team successfully migrated the primary customer database to a new high-availability instance, completing the hardware refresh ahead of schedule. This migration resulted in a 30 percent improvement in query latency, with stable connection performance since the cutover. Two new read replicas were provisioned to enhance the analytics workload, and the staging environment was updated to match the new production setup. Additionally, documentation for the new topology is in draft form and awaiting review, while a minor logging issue has been noted for follow-up.",
+          "response": "The platform team completed the migration of the primary customer database to a new high-availability instance ahead of schedule, achieving a 30 percent improvement in query latency and stable connection performance. They also provisioned two new read replicas for analytics, updated the staging environment, and are finalizing documentation, while addressing a minor logging issue for follow-up.",
+          "word_count": 56
+        },
+        "multi_hop_3": {
+          "prompt": "Summarize the following in one sentence of no more than 25 words.\n\nThe platform team completed the migration of the primary customer database to a new high-availability instance ahead of schedule, achieving a 30 percent improvement in query latency and stable connection performance. They also provisioned two new read replicas for analytics, updated the staging environment, and are finalizing documentation, while addressing a minor logging issue for follow-up.",
+          "response": "The platform team successfully migrated the customer database early, enhancing query latency by 30%, while provisioning read replicas and updating documentation.",
+          "word_count": 21
+        },
+        "multi_hop_reader": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nThe platform team successfully migrated the customer database early, enhancing query latency by 30%, while provisioning read replicas and updating documentation.",
+          "response": "There are no immediate risks or issues mentioned in the summary that require urgent attention. The migration appears successful, with improvements noted in query latency and documentation updates."
+        }
+      }
+    },
+    {
+      "run_index": 2,
+      "steps": {
+        "gate_fact_a": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nThe primary customer database was migrated to a new high-availability instance over the weekend, completing the planned hardware refresh ahead of schedule.",
+          "response": "There doesn't appear to be any immediate risks or issues requiring urgent attention based on the summary provided. The migration was completed successfully and ahead of schedule. However, it would be prudent to monitor the new instance for any post-migration issues."
+        },
+        "gate_fact_b": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nThe automated nightly backup job still points at the old database instance.",
+          "response": "Yes, this is a significant risk. The automated nightly backup job pointing to the old database instance could lead to data loss or inconsistency if the old instance is no longer being updated or is decommissioned. Urgent attention is required to update the backup job to point to the correct database instance."
+        },
+        "single_hop_summary": {
+          "prompt": "Summarize the following in one sentence of no more than 25 words.\n\nWeekly infrastructure review for the platform team. The primary customer database was migrated to a new high-availability instance over the weekend, completing the planned hardware refresh ahead of schedule. Query latency on the new instance has improved by roughly 30 percent and connection stability has been stable since cutover. The automated nightly backup job still points at the old database instance. Two new read replicas were provisioned to support the analytics workload. The staging environment was refreshed to mirror the new production topology. Dashboard panels were updated to reflect the new instance names. The on-call rotation was handed over to the incoming engineer for the next cycle. A minor logging verbosity issue was identified and downgraded to a follow-up ticket. Documentation for the new topology was drafted and is pending review.",
+          "response": "The platform team successfully migrated the primary database to a high-availability instance, improving query latency by 30%, while updating documentation and addressing minor issues.",
+          "word_count": 24
+        },
+        "single_hop_reader": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nThe platform team successfully migrated the primary database to a high-availability instance, improving query latency by 30%, while updating documentation and addressing minor issues.",
+          "response": "There are no immediate risks or issues requiring urgent attention in the summary provided. The migration was successful, and minor issues have been addressed."
+        },
+        "multi_hop_1": {
+          "prompt": "Summarize the following report in four sentences.\n\nWeekly infrastructure review for the platform team. The primary customer database was migrated to a new high-availability instance over the weekend, completing the planned hardware refresh ahead of schedule. Query latency on the new instance has improved by roughly 30 percent and connection stability has been stable since cutover. The automated nightly backup job still points at the old database instance. Two new read replicas were provisioned to support the analytics workload. The staging environment was refreshed to mirror the new production topology. Dashboard panels were updated to reflect the new instance names. The on-call rotation was handed over to the incoming engineer for the next cycle. A minor logging verbosity issue was identified and downgraded to a follow-up ticket. Documentation for the new topology was drafted and is pending review.",
+          "response": "The platform team successfully migrated the primary customer database to a new high-availability instance over the weekend, finishing the hardware refresh ahead of schedule. This migration resulted in a 30 percent improvement in query latency and stable connection performance. Two new read replicas were added to enhance the analytics workload, and the staging environment was updated to match the new production setup. Additionally, documentation for the new topology is in draft form and awaiting review, while a minor logging issue has been noted for follow-up.",
+          "word_count": 85
+        },
+        "multi_hop_2": {
+          "prompt": "Summarize the following report in two sentences.\n\nThe platform team successfully migrated the primary customer database to a new high-availability instance over the weekend, finishing the hardware refresh ahead of schedule. This migration resulted in a 30 percent improvement in query latency and stable connection performance. Two new read replicas were added to enhance the analytics workload, and the staging environment was updated to match the new production setup. Additionally, documentation for the new topology is in draft form and awaiting review, while a minor logging issue has been noted for follow-up.",
+          "response": "The platform team completed the migration of the primary customer database to a high-availability instance ahead of schedule, achieving a 30 percent improvement in query latency and stable connection performance. They also added two new read replicas for analytics, updated the staging environment, and are finalizing documentation, while noting a minor logging issue for future resolution.",
+          "word_count": 56
+        },
+        "multi_hop_3": {
+          "prompt": "Summarize the following in one sentence of no more than 25 words.\n\nThe platform team completed the migration of the primary customer database to a high-availability instance ahead of schedule, achieving a 30 percent improvement in query latency and stable connection performance. They also added two new read replicas for analytics, updated the staging environment, and are finalizing documentation, while noting a minor logging issue for future resolution.",
+          "response": "The platform team successfully migrated the customer database early, enhancing query latency by 30%, adding read replicas, updating staging, and addressing a minor logging issue.",
+          "word_count": 25
+        },
+        "multi_hop_reader": {
+          "prompt": "The following is a short status summary. Is there any risk or issue here that requires urgent attention? Answer briefly.\n\nThe platform team successfully migrated the customer database early, enhancing query latency by 30%, adding read replicas, updating staging, and addressing a minor logging issue.",
+          "response": "There are no urgent risks or issues mentioned in the summary. The migration appears successful, with improvements noted and only a minor logging issue addressed."
+        }
+      }
+    }
+  ]
+}

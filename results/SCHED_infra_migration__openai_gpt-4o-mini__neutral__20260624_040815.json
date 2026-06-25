@@ -1,0 +1,137 @@
+{
+  "item_id": "infra_migration",
+  "domain": "infrastructure",
+  "model": "openai/gpt-4o-mini",
+  "mode": "neutral",
+  "caps": [
+    70,
+    45,
+    30,
+    20
+  ],
+  "temperature": 0.2,
+  "timestamp": "2026-06-24T04:07:35.881395+00:00",
+  "recovery_criterion": "The reader states that current/live customer data is unprotected or at risk of loss because backups are targeting the old instance rather than the new one (a backup/recoverability gap created by the migration), not merely that backups should be checked.",
+  "runs": [
+    {
+      "run_index": 0,
+      "stages": [
+        {
+          "hop": 0,
+          "cap": null,
+          "text": "Weekly infrastructure review for the platform team. The primary customer database was migrated to a new high-availability instance over the weekend, completing the planned hardware refresh ahead of schedule. Query latency on the new instance has improved by roughly 30 percent and connection stability has been stable since cutover. The automated nightly backup job still points at the old database instance. Two new read replicas were provisioned to support the analytics workload. The staging environment was refreshed to mirror the new production topology. Dashboard panels were updated to reflect the new instance names. The on-call rotation was handed over to the incoming engineer for the next cycle. A minor logging verbosity issue was identified and downgraded to a follow-up ticket. Documentation for the new topology was drafted and is pending review.",
+          "word_count": 131,
+          "reader": "Yes, there is a risk that requires urgent attention: the automated nightly backup job still points to the old database instance. This could lead to data loss or recovery issues if the old instance fails. Immediate action is needed to update the backup job to point to the new high-availability instance."
+        },
+        {
+          "hop": 1,
+          "cap": 70,
+          "text": "The platform team completed a successful migration of the primary customer database to a high-availability instance, improving query latency by 30%. Two read replicas were added for analytics, and the staging environment was updated to match production. The automated backup still targets the old instance, and a minor logging issue was noted for follow-up. Documentation for the new setup is in draft, and the on-call rotation has been handed over.",
+          "word_count": 70,
+          "reader": "Yes, there are two issues that require urgent attention: the automated backup still targeting the old instance poses a risk of data loss, and the minor logging issue should be addressed to ensure proper monitoring and troubleshooting."
+        },
+        {
+          "hop": 2,
+          "cap": 45,
+          "text": "The platform team migrated the primary customer database to a high-availability instance, enhancing query latency by 30%. They added two read replicas, updated the staging environment, and noted a logging issue. Documentation is in draft, and the on-call rotation has been transferred.",
+          "word_count": 42,
+          "reader": "The logging issue noted by the platform team requires urgent attention, as it could impact monitoring and troubleshooting. Additionally, the documentation being in draft form may pose risks if team members need to reference it during incidents."
+        },
+        {
+          "hop": 3,
+          "cap": 30,
+          "text": "The platform team improved the customer database's query latency by 30% through migration and added read replicas, updated staging, noted a logging issue, and transferred on-call rotation.",
+          "word_count": 27,
+          "reader": "The noted logging issue may require urgent attention, as it could impact monitoring and troubleshooting. Other improvements seem positive, but the logging issue should be addressed promptly to ensure system reliability."
+        },
+        {
+          "hop": 4,
+          "cap": 20,
+          "text": "The platform team enhanced query latency by 30%, added read replicas, updated staging, fixed a logging issue, and transferred on-call rotation.",
+          "word_count": 21,
+          "reader": "There are no immediate risks or issues requiring urgent attention in the summary provided. The enhancements and fixes appear to be positive developments."
+        }
+      ]
+    },
+    {
+      "run_index": 1,
+      "stages": [
+        {
+          "hop": 0,
+          "cap": null,
+          "text": "Weekly infrastructure review for the platform team. The primary customer database was migrated to a new high-availability instance over the weekend, completing the planned hardware refresh ahead of schedule. Query latency on the new instance has improved by roughly 30 percent and connection stability has been stable since cutover. The automated nightly backup job still points at the old database instance. Two new read replicas were provisioned to support the analytics workload. The staging environment was refreshed to mirror the new production topology. Dashboard panels were updated to reflect the new instance names. The on-call rotation was handed over to the incoming engineer for the next cycle. A minor logging verbosity issue was identified and downgraded to a follow-up ticket. Documentation for the new topology was drafted and is pending review.",
+          "word_count": 131,
+          "reader": "Yes, there is an urgent issue that requires attention: the automated nightly backup job still points at the old database instance. This poses a risk of data loss or inconsistency if the old instance fails or is decommissioned. Immediate action should be taken to update the backup job to point to the new high-availability instance."
+        },
+        {
+          "hop": 1,
+          "cap": 70,
+          "text": "The platform team's weekly infrastructure review noted the successful migration of the primary customer database to a high-availability instance, improving query latency by 30%. Connection stability remains strong, but the automated backup still targets the old instance. Two read replicas were added for analytics, and the staging environment was updated. Dashboard panels were refreshed, the on-call rotation was handed over, a minor logging issue was noted for follow-up, and documentation is pending review.",
+          "word_count": 73,
+          "reader": "Yes, there is an urgent issue that requires attention: the automated backup still targets the old instance. This poses a risk of data loss or recovery challenges if the old instance fails. Immediate action should be taken to update the backup configuration to the new high-availability instance."
+        },
+        {
+          "hop": 2,
+          "cap": 45,
+          "text": "The platform team reported a successful migration of the primary customer database, enhancing query latency by 30%. Two read replicas were added, and the staging environment updated. A minor logging issue was noted, with documentation pending review and the on-call rotation handed over.",
+          "word_count": 43,
+          "reader": "The minor logging issue may require attention, especially if it affects monitoring or troubleshooting. However, the overall status appears positive with successful migration and enhancements."
+        },
+        {
+          "hop": 3,
+          "cap": 30,
+          "text": "The platform team successfully migrated the customer database, improving query latency by 30%, added two read replicas, updated the staging environment, noted a logging issue, and completed the on-call rotation handover.",
+          "word_count": 31,
+          "reader": "The logging issue noted requires urgent attention, as it could impact monitoring and troubleshooting efforts."
+        },
+        {
+          "hop": 4,
+          "cap": 20,
+          "text": "The platform team improved query latency by 30%, added read replicas, updated staging, noted a logging issue, and completed handover.",
+          "word_count": 20,
+          "reader": "The logging issue noted by the platform team may require urgent attention, as it could impact monitoring and troubleshooting."
+        }
+      ]
+    },
+    {
+      "run_index": 2,
+      "stages": [
+        {
+          "hop": 0,
+          "cap": null,
+          "text": "Weekly infrastructure review for the platform team. The primary customer database was migrated to a new high-availability instance over the weekend, completing the planned hardware refresh ahead of schedule. Query latency on the new instance has improved by roughly 30 percent and connection stability has been stable since cutover. The automated nightly backup job still points at the old database instance. Two new read replicas were provisioned to support the analytics workload. The staging environment was refreshed to mirror the new production topology. Dashboard panels were updated to reflect the new instance names. The on-call rotation was handed over to the incoming engineer for the next cycle. A minor logging verbosity issue was identified and downgraded to a follow-up ticket. Documentation for the new topology was drafted and is pending review.",
+          "word_count": 131,
+          "reader": "Yes, there is an urgent issue that requires attention: the automated nightly backup job still points to the old database instance. This poses a risk of data loss or recovery issues if the old instance fails. Immediate action should be taken to update the backup job to ensure it targets the new high-availability instance."
+        },
+        {
+          "hop": 1,
+          "cap": 70,
+          "text": "The platform team completed a successful migration of the primary customer database to a high-availability instance, improving query latency by 30%. Connection stability remains strong, but the automated nightly backup still targets the old instance. Two read replicas were added for analytics, and the staging environment was updated. Dashboard panels were revised, and the on-call rotation was transferred. A minor logging issue was noted for follow-up, and documentation for the new setup is pending review.",
+          "word_count": 75,
+          "reader": "Yes, there is an urgent issue regarding the automated nightly backup still targeting the old instance, as this poses a risk of data loss or inconsistency. This needs immediate attention to ensure backups are correctly configured for the new high-availability instance."
+        },
+        {
+          "hop": 2,
+          "cap": 45,
+          "text": "The platform team migrated the primary customer database to a high-availability instance, enhancing query latency by 30%. They added read replicas, updated the staging environment, revised dashboard panels, and transferred the on-call rotation. A logging issue was noted, and documentation is under review.",
+          "word_count": 43,
+          "reader": "The noted logging issue requires urgent attention, as it could impact monitoring and troubleshooting."
+        },
+        {
+          "hop": 3,
+          "cap": 30,
+          "text": "The platform team improved the customer database's query latency by 30% through migration, added read replicas, updated staging, revised dashboards, and noted a logging issue under review.",
+          "word_count": 27,
+          "reader": "The logging issue under review could pose a risk if it affects monitoring or troubleshooting. It requires attention to ensure it doesn't impact system performance or reliability."
+        },
+        {
+          "hop": 4,
+          "cap": 20,
+          "text": "The platform team enhanced query latency by 30% via migration, read replicas, staging updates, dashboard revisions, and identified a logging issue.",
+          "word_count": 21,
+          "reader": "The identified logging issue may require urgent attention, as it could impact monitoring and troubleshooting. The enhancements in query latency are positive, but addressing the logging issue is crucial to ensure system reliability and performance."
+        }
+      ]
+    }
+  ]
+}

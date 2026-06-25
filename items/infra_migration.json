@@ -1,0 +1,9 @@
+{
+  "id": "infra_migration",
+  "domain": "infrastructure",
+  "source": "Weekly infrastructure review for the platform team. The primary customer database was migrated to a new high-availability instance over the weekend, completing the planned hardware refresh ahead of schedule. Query latency on the new instance has improved by roughly 30 percent and connection stability has been stable since cutover. The automated nightly backup job still points at the old database instance. Two new read replicas were provisioned to support the analytics workload. The staging environment was refreshed to mirror the new production topology. Dashboard panels were updated to reflect the new instance names. The on-call rotation was handed over to the incoming engineer for the next cycle. A minor logging verbosity issue was identified and downgraded to a follow-up ticket. Documentation for the new topology was drafted and is pending review.",
+  "fact_a": "The primary customer database was migrated to a new high-availability instance over the weekend, completing the planned hardware refresh ahead of schedule.",
+  "fact_b": "The automated nightly backup job still points at the old database instance.",
+  "recovery_criterion": "The reader states that current/live customer data is unprotected or at risk of loss because backups are targeting the old instance rather than the new one (a backup/recoverability gap created by the migration), not merely that backups should be checked.",
+  "notes": "Validated by hand on stronger models: single-hop to 25 words preserved the risk; multi-hop 4->2->1 buried it as a minor follow-up and downstream readers said no urgent risk. Fact B alone reads as a routine config detail."
+}

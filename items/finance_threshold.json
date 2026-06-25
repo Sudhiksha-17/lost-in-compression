@@ -1,0 +1,9 @@
+{
+  "id": "finance_threshold",
+  "domain": "finance_audit",
+  "source": "Quarterly controls review, accounts payable. The team processed 14,200 invoices this quarter with a 99.1 percent on-time payment rate. The single-approval threshold for vendor payments was raised from 10,000 to 50,000 dollars in October to reduce approval bottlenecks. The automated exception report that flags payments for secondary review still uses the previous 10,000 dollar threshold. Vendor master data was cleaned and 320 duplicate records were merged. The month-end close completed two days ahead of schedule. A new dashboard for payment aging was rolled out to the finance team. Staff completed annual compliance training with full attendance.",
+  "fact_a": "The single-approval threshold for vendor payments was raised from 10,000 to 50,000 dollars in October to reduce approval bottlenecks.",
+  "fact_b": "The automated exception report that flags payments for secondary review still uses the previous 10,000 dollar threshold.",
+  "recovery_criterion": "The reader states that vendor payments in the 10,000 to 50,000 dollar band now receive neither secondary approval nor exception flagging, leaving that band unreviewed, not merely that thresholds should be aligned.",
+  "notes": "Candidate. Run the component-isolation gate before using."
+}

@@ -1,0 +1,115 @@
+{
+  "item_id": "healthcare_lab_interface",
+  "domain": "healthcare_it",
+  "model": "openai/gpt-4o-mini",
+  "mode": "neutral",
+  "caps": [
+    30,
+    15,
+    8
+  ],
+  "temperature": 0.2,
+  "timestamp": "2026-06-24T03:59:30.651929+00:00",
+  "recovery_criterion": "The reader states that manual entry of lab results into patient charts creates a patient-safety risk through transcription error, delay, or missed results (wrong or missing lab data could affect clinical decisions), not merely that the interface should be fixed.",
+  "runs": [
+    {
+      "run_index": 0,
+      "stages": [
+        {
+          "hop": 0,
+          "cap": null,
+          "text": "Weekly systems report for the hospital IT team. Overall system uptime for the month was 99.95 percent, exceeding the service target. The patient-portal upgrade went live smoothly with positive feedback on the new appointment flow. The automated interface that posts laboratory results into the electronic health record has been down for nine days, and results are being entered into patient charts by hand in the interim. Network segmentation for the medical-device VLAN was completed as planned. The nightly database maintenance window was shortened by twenty minutes after tuning. Help-desk ticket resolution time improved to under four hours on average. The disaster-recovery failover test for the imaging system passed without issues.",
+          "word_count": 110,
+          "reader": "Yes, there is a significant issue that requires urgent attention: the automated interface for posting laboratory results into the electronic health record has been down for nine days, necessitating manual entry of results into patient charts. This poses a risk of errors and inefficiencies in patient care."
+        },
+        {
+          "hop": 1,
+          "cap": 30,
+          "text": "The hospital IT report highlights 99.95% system uptime, successful patient-portal upgrade, ongoing lab result entry issues, completed network segmentation, improved help-desk response, and successful disaster-recovery test.",
+          "word_count": 26,
+          "reader": "Yes, the ongoing lab result entry issues require urgent attention, as they could impact patient care and operational efficiency."
+        },
+        {
+          "hop": 2,
+          "cap": 15,
+          "text": "Hospital IT report shows high uptime, successful upgrades, ongoing lab issues, and improved support.",
+          "word_count": 14,
+          "reader": "The ongoing lab issues may require urgent attention, as they could impact patient care or operational efficiency."
+        },
+        {
+          "hop": 3,
+          "cap": 8,
+          "text": "High uptime, successful upgrades, lab issues, improved support.",
+          "word_count": 8,
+          "reader": "Yes, the mention of \"lab issues\" suggests a potential risk that may require urgent attention, as it could impact operations or project outcomes."
+        }
+      ]
+    },
+    {
+      "run_index": 1,
+      "stages": [
+        {
+          "hop": 0,
+          "cap": null,
+          "text": "Weekly systems report for the hospital IT team. Overall system uptime for the month was 99.95 percent, exceeding the service target. The patient-portal upgrade went live smoothly with positive feedback on the new appointment flow. The automated interface that posts laboratory results into the electronic health record has been down for nine days, and results are being entered into patient charts by hand in the interim. Network segmentation for the medical-device VLAN was completed as planned. The nightly database maintenance window was shortened by twenty minutes after tuning. Help-desk ticket resolution time improved to under four hours on average. The disaster-recovery failover test for the imaging system passed without issues.",
+          "word_count": 110,
+          "reader": "Yes, there is a significant issue that requires urgent attention: the automated interface for posting laboratory results into the electronic health record has been down for nine days, necessitating manual entry of results into patient charts. This poses a risk of errors and delays in patient care."
+        },
+        {
+          "hop": 1,
+          "cap": 30,
+          "text": "The hospital IT report highlights 99.95% uptime, a successful patient-portal upgrade, ongoing lab result entry issues, completed network segmentation, improved help-desk response, and a successful disaster-recovery test.",
+          "word_count": 27,
+          "reader": "Yes, the ongoing lab result entry issues require urgent attention, as they could impact patient care and operational efficiency."
+        },
+        {
+          "hop": 2,
+          "cap": 15,
+          "text": "Hospital IT report shows high uptime, successful upgrades, ongoing issues, and improved support services.",
+          "word_count": 14,
+          "reader": "The ongoing issues mentioned in the report could pose a risk that requires urgent attention, as they may affect hospital operations or patient care. It's important to identify and address these issues promptly."
+        },
+        {
+          "hop": 3,
+          "cap": 8,
+          "text": "High uptime, successful upgrades, ongoing issues, improved support.",
+          "word_count": 8,
+          "reader": "Yes, the mention of \"ongoing issues\" suggests there may be unresolved problems that could impact performance or user experience. This requires urgent attention to ensure they are addressed promptly."
+        }
+      ]
+    },
+    {
+      "run_index": 2,
+      "stages": [
+        {
+          "hop": 0,
+          "cap": null,
+          "text": "Weekly systems report for the hospital IT team. Overall system uptime for the month was 99.95 percent, exceeding the service target. The patient-portal upgrade went live smoothly with positive feedback on the new appointment flow. The automated interface that posts laboratory results into the electronic health record has been down for nine days, and results are being entered into patient charts by hand in the interim. Network segmentation for the medical-device VLAN was completed as planned. The nightly database maintenance window was shortened by twenty minutes after tuning. Help-desk ticket resolution time improved to under four hours on average. The disaster-recovery failover test for the imaging system passed without issues.",
+          "word_count": 110,
+          "reader": "Yes, there is a significant issue that requires urgent attention: the automated interface for posting laboratory results into the electronic health record has been down for nine days, necessitating manual entry of results into patient charts. This poses a risk of errors and inefficiencies in patient care."
+        },
+        {
+          "hop": 1,
+          "cap": 30,
+          "text": "The hospital IT report highlights 99.95% system uptime, successful patient-portal upgrade, ongoing lab result entry issues, completed network segmentation, improved help-desk resolution, and successful disaster-recovery test.",
+          "word_count": 26,
+          "reader": "Yes, the ongoing lab result entry issues require urgent attention, as they could impact patient care and operational efficiency."
+        },
+        {
+          "hop": 2,
+          "cap": 15,
+          "text": "Hospital IT report shows high uptime, successful upgrades, ongoing lab issues, and improved support.",
+          "word_count": 14,
+          "reader": "Yes, the ongoing lab issues may require urgent attention, as they could impact patient care and operational efficiency."
+        },
+        {
+          "hop": 3,
+          "cap": 8,
+          "text": "High uptime, successful upgrades, lab issues, improved support.",
+          "word_count": 8,
+          "reader": "Yes, the mention of \"lab issues\" indicates a potential risk that may require urgent attention, as it could impact operations or project timelines."
+        }
+      ]
+    }
+  ]
+}
