@@ -8,32 +8,29 @@ safety-relevant information. The result: under a neutral "summarize this"
 instruction, an embedded safety-relevant fact is frequently lost, and the manner
 of loss depends on the model's capability. A weaker model (GPT-4o-mini) omits the
 fact outright, and the omission worsens as summaries are re-summarized. A stronger
-model (Claude Haiku 4.5) recovers the fact on most items, but on one item it
-failed in a more troubling way: it retained the topic while manufacturing a false
-reassurance, downgrading an immediate risk to "low urgency" by inventing a
-mitigating condition the source never stated. A risk-aware summarization
+model (Claude Haiku 4.5) keeps the fact on most items. But on one item it did
+something worse than dropping it: it kept the topic and added a false reassurance,
+calling an urgent risk "low urgency" on the basis of a condition the source never
+stated. A risk-aware summarization
 instruction restores recovery to near 100% across both models and every
 compression depth tested.
 
 This is a pilot. The design is not a full grid: the single-step instruction
 comparison used the two GPT models (GPT-4o-mini and GPT-4o) across all six items,
 and the multi-step degradation chain used GPT-4o-mini and Claude Haiku 4.5 on
-three items each, three runs per condition. It is reported because ruling out the
-simpler explanations (relational structure, a pure space constraint) is much of
-what makes the instruction effect credible, and because the failure bears directly
-on a proposed safety technique.
+three items each, three runs per condition.
 
 ## Why this matters
 
-In the trusted-summarization pattern, an agent's trajectory is condensed before a
-monitor reviews it. The motivations are partly practical, an agent's full
-trajectory (tool calls, intermediate reasoning, long outputs) may exceed the
-monitor's context window and is expensive to review in full, and partly about
-safety, condensing the trajectory limits the channel through which an agent could
-manipulate or pass hidden signals to the monitor. In each case the pattern assumes that a faithful summary preserves what the
-monitor needs. The natural
-instruction in such a pipeline is simply "summarize", not "summarize and flag
-risks." This study examines the cost of that default.
+In a multi-agent or agentic system, one model often watches another. The watched
+agent produces a long trajectory, tool calls, reasoning, outputs, and a monitor
+reviews it for anything dangerous. But trajectories are long and expensive to
+review in full, so a common move is to summarize the trajectory first, then hand
+the summary to the monitor. Summarizing has a safety rationale too: a shorter,
+filtered trajectory gives a scheming agent less room to pass hidden signals to the
+monitor. Either way, the pipeline assumes the summary still carries what the
+monitor needs. The natural instruction is just "summarize", not "summarize and
+flag risks." This study examines the cost of that default.
 
 ## Setup
 
@@ -41,8 +38,9 @@ Each item is a realistic positive status report containing exactly one embedded
 safety-relevant fact that is not the report's headline. For example, an
 infrastructure review reporting a successful database migration also notes, in one
 line, that the nightly backup job still points at the decommissioned instance, so
-current data is unprotected. Each embedded fact is one the model flags as a risk
-when shown in isolation, establishing that the model treats it as material. Six
+current data is unprotected. Each embedded fact is one the model calls urgent when
+you show it that line on its own. So the model does recognize the risk; the
+question is whether it survives summarization. Six
 items span infrastructure, security, finance, healthcare IT, ML deployment, and
 data handling.
 
@@ -58,26 +56,26 @@ and the compression depth.
 
 ## Ruling out simpler explanations
 
-Before crediting the instruction, I excluded simpler explanations; prompts and
-responses are in the repository.
+Before crediting the instruction, I checked whether a simpler factor explained the
+loss. Two I could test and exclude:
 
-*Relational risk* (the danger lives only in combining two innocuous facts). A
-component-isolation gate refutes this: shown the backup line alone ("The automated
-nightly backup job still points at the old database instance"), the monitor flags
-it as urgent; shown the migration line alone, it treats it as benign. The risk is
-in a single fact, not the combination.
+- **Relational risk** (the danger exists only in combining two facts). Excluded:
+  shown the backup line alone, the monitor flags it as urgent, so the risk sits in
+  that single fact, not in the combination.
+- **Compression ratio** (the fact is dropped only because space ran out).
+  Excluded: even at the gentlest compression, with room to spare, the summary kept
+  trivial details and dropped the risky one. What survives is a ranking decision,
+  not a space limit.
 
-*Compression ratio* (the fact is dropped only because space ran out). An
-exploratory single-item sweep (caps 60-20) shows otherwise: the fact was dropped
-even at the gentlest cap, a 50-word summary with room to spare that instead spent
-words on trivial items. The loss is a ranking decision, not a space limit.
+Two more I could not isolate with this data, and flag rather than claim:
 
-Two factors I did *not* isolate, and do not claim to: *salience* (vivid facts
-survive compression that quiet ones do not, so phrasing sets where a fact starts;
-the instruction effect is separable only because it holds within a single item,
-phrasing fixed), and *hop count* (the multi-step chain confounds the number of
-hops with their cumulative compression, so it shows what a realistic chain does,
-not that hop count per se is the mechanism).
+- **Salience.** Vividly-phrased facts survive compression that quietly-phrased
+  ones do not, so phrasing likely sets a fact's starting point. The instruction
+  effect is separate (it holds for the same fact at the same length), but I did not
+  disentangle the two.
+- **Hop count.** In the multi-step chain, more steps also means more compression,
+  so I cannot separate step count from cumulative compression. The chain shows what
+  a realistic pipeline does, not that step count itself is the cause.
 
 ## What survived: the instruction effect
 
@@ -207,23 +205,19 @@ Verifying that the summary still mentions the relevant topic is insufficient,
 since the corruption case retained the topic while inverting its urgency; recovery
 must be judged on whether the danger and its urgency survive.
 
-## Limitations
+## Limitations and what comes next
 
-A pilot: six items, three models across two families, three runs per condition,
-non-uniform design, so rates are indicative, not powered. The stimuli are static,
-hand-constructed reports, not real agent trajectories. The monitor is an LLM from
-the same families as the summarizers. Scoring was by a single rater; a second
-rater and an agreement check would strengthen it. The corruption finding rests on
-one item from one model and is hypothesis-generating, not established.
-
-## Future work
-
-Scale the items and model families and report statistics rather than indicative
-rates; test the false-caveat hypothesis directly by constructing items that do and
-do not afford a plausible mitigating condition; add an action-divergence measure
-that checks whether a downstream agent's behavior differs on full versus
-summarized input; vary the monitor model independently of the summarizer; and add
-a second rater with an inter-rater agreement check.
+This is a pilot: six items, three models across two families, three runs each, and
+not a full grid, so treat the rates as indicative. The natural next version scales
+the items and model families and reports real statistics. The stimuli are static,
+hand-written reports, not real agent trajectories; the more realistic test is
+whether a downstream agent acts differently on the full input versus the summary.
+The corruption finding rests on one item from one model, so it is a lead, not a
+result, the way to pin it down is to build items that do and do not offer a
+plausible "it's probably fine" caveat and see whether corruption tracks that.
+Scoring was done by a single rater; a second rater with an agreement check would
+firm it up. And the monitor came from the same model families as the summarizers,
+so varying the monitor independently is worth doing.
 
 ## Collaboration
 
