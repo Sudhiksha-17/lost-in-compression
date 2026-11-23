@@ -84,9 +84,9 @@ def main():
         for i in range(args.runs):
             print("  cap " + str(cap) + " run " + str(i + 1) + "/" + str(args.runs) + " ...", flush=True)
             cprompt = COMPRESS_WORDCAP.format(words=cap, text=item["source"])
-            summary = call_model(args.model, cprompt, api_key)
+            summary = call_model(args.model, cprompt, api_key, temperature=args.temperature)
             rq = RISK_QUESTION.format(text=summary)
-            reader = call_model(args.model, rq, api_key)
+            reader = call_model(args.model, rq, api_key, temperature=args.temperature)
             record["sweep"].append({
                 "cap": cap, "run_index": i,
                 "summary": summary, "summary_word_count": word_count(summary),
