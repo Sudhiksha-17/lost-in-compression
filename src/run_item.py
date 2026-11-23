@@ -62,36 +62,36 @@ def word_count(text):
     return len(text.split())
 
 
-def run_once(item, model, api_key, run_idx, wordcap):
+def run_once(item, model, api_key, run_idx, wordcap, temperature=0.2):
     steps = {}
 
     qa = RISK_QUESTION.format(text=item["fact_a"])
-    steps["gate_fact_a"] = {"prompt": qa, "response": call_model(model, qa, api_key)}
+    steps["gate_fact_a"] = {"prompt": qa, "response": call_model(model, qa, api_key, temperature=temperature)}
     qb = RISK_QUESTION.format(text=item["fact_b"])
-    steps["gate_fact_b"] = {"prompt": qb, "response": call_model(model, qb, api_key)}
+    steps["gate_fact_b"] = {"prompt": qb, "response": call_model(model, qb, api_key, temperature=temperature)}
 
     sh_prompt = COMPRESS_WORDCAP.format(words=wordcap, text=item["source"])
-    sh_summary = call_model(model, sh_prompt, api_key)
+    sh_summary = call_model(model, sh_prompt, api_key, temperature=temperature)
     steps["single_hop_summary"] = {
         "prompt": sh_prompt, "response": sh_summary, "word_count": word_count(sh_summary),
     }
     sh_q = RISK_QUESTION.format(text=sh_summary)
-    steps["single_hop_reader"] = {"prompt": sh_q, "response": call_model(model, sh_q, api_key)}
+    steps["single_hop_reader"] = {"prompt": sh_q, "response": call_model(model, sh_q, api_key, temperature=temperature)}
 
     h1_prompt = COMPRESS_SENTENCES.format(n="four", text=item["source"])
-    h1 = call_model(model, h1_prompt, api_key)
+    h1 = call_model(model, h1_prompt, api_key, temperature=temperature)
     steps["multi_hop_1"] = {"prompt": h1_prompt, "response": h1, "word_count": word_count(h1)}
 
     h2_prompt = COMPRESS_SENTENCES.format(n="two", text=h1)
-    h2 = call_model(model, h2_prompt, api_key)
+    h2 = call_model(model, h2_prompt, api_key, temperature=temperature)
     steps["multi_hop_2"] = {"prompt": h2_prompt, "response": h2, "word_count": word_count(h2)}
 
     h3_prompt = COMPRESS_WORDCAP.format(words=wordcap, text=h2)
-    h3 = call_model(model, h3_prompt, api_key)
+    h3 = call_model(model, h3_prompt, api_key, temperature=temperature)
     steps["multi_hop_3"] = {"prompt": h3_prompt, "response": h3, "word_count": word_count(h3)}
 
     mh_q = RISK_QUESTION.format(text=h3)
-    steps["multi_hop_reader"] = {"prompt": mh_q, "response": call_model(model, mh_q, api_key)}
+    steps["multi_hop_reader"] = {"prompt": mh_q, "response": call_model(model, mh_q, api_key, temperature=temperature)}
 
     return {"run_index": run_idx, "steps": steps}
 
@@ -124,7 +124,7 @@ def main():
 
     for i in range(args.runs):
         print("  run " + str(i + 1) + "/" + str(args.runs) + " ...", flush=True)
-        record["runs"].append(run_once(item, args.model, api_key, i, args.wordcap))
+        record["runs"].append(run_once(item, args.model, api_key, i, args.wordcap, args.temperature))
 
     results_dir = Path(__file__).resolve().parent.parent / "results"
     results_dir.mkdir(exist_ok=True)

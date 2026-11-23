@@ -55,17 +55,17 @@ def word_count(text):
     return len(text.split())
 
 
-def run_chain(item, model, api_key, mode, caps):
+def run_chain(item, model, api_key, mode, caps, temperature=0.2):
     template = INSTRUCTIONS[mode]
     stages = []
-    src_reader = call_model(model, RISK_QUESTION.format(text=item["source"]), api_key)
+    src_reader = call_model(model, RISK_QUESTION.format(text=item["source"]), api_key, temperature=temperature)
     stages.append({"hop": 0, "cap": None, "text": item["source"],
                    "word_count": word_count(item["source"]), "reader": src_reader})
     current = item["source"]
     for idx, cap in enumerate(caps, start=1):
         cprompt = template.format(words=cap, text=current)
-        summary = call_model(model, cprompt, api_key)
-        reader = call_model(model, RISK_QUESTION.format(text=summary), api_key)
+        summary = call_model(model, cprompt, api_key, temperature=temperature)
+        reader = call_model(model, RISK_QUESTION.format(text=summary), api_key, temperature=temperature)
         stages.append({"hop": idx, "cap": cap, "text": summary,
                        "word_count": word_count(summary), "reader": reader})
         current = summary
@@ -98,7 +98,7 @@ def main():
     for i in range(args.runs):
         print("  run " + str(i + 1) + "/" + str(args.runs) + " (" + args.mode + ") ...", flush=True)
         record["runs"].append({"run_index": i,
-                               "stages": run_chain(item, args.model, api_key, args.mode, args.caps)})
+                               "stages": run_chain(item, args.model, api_key, args.mode, args.caps, args.temperature)})
 
     results_dir = Path(__file__).resolve().parent.parent / "results"
     results_dir.mkdir(exist_ok=True)
